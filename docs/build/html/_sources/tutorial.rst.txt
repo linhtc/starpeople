@@ -1,4 +1,0 @@
-Tutorial
-===================
-
-Test the tutorial
