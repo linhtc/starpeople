@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
-
+#sys.path.insert(0, os.path.abspath('../..'))
 
 setup(
-    name='sphinxcontrib.httpdomain',
+    name='sphinxcontrib-httpdomain',
     version="1.5.0",
     description='Sphinx domain for HTTP APIs',
     author='Hong Minhee',

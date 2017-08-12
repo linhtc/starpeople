@@ -3,7 +3,7 @@ import sys
 
 import sphinx_rtd_theme
 
-sys.path.insert(0, os.path.abspath('../..'))
+sys.path.insert(0, '/home/docs/checkouts/readthedocs.org/user_builds/starpeople/envs/latest/lib/python2.7/site-packages/sphinxcontrib.httpdomain-1.5.0-py2.7.egg')
 #sys.path.append(os.path.dirname(__file__))
 # -*- coding: utf-8 -*-
 #
