@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='httpdomain',
+    name='sphinxcontrib.httpdomain',
     version="1.5.0",
     description='Sphinx domain for HTTP APIs',
     author='Hong Minhee',
