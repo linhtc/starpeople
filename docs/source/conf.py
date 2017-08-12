@@ -1,4 +1,8 @@
+import os
+import sys
+
 import sphinx_rtd_theme
+sys.path.insert(0, os.path.abspath('..'))
 # -*- coding: utf-8 -*-
 #
 # Star People Documentation documentation build configuration file, created by
@@ -168,10 +172,3 @@ texinfo_documents = [
 ]
 
 
-
-from setuptools import setup, find_packages
-setup(
-    name="HelloWorld",
-    version="0.1",
-    packages=find_packages(),
-)
