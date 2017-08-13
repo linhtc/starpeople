@@ -7,7 +7,7 @@ setup(
     description='Sphinx domain for HTTP APIs',
     author='Hong Minhee',
     author_email='eric@ericholscher.com',
-    url='https://pypi.python.org/pypi/sphinxcontrib-httpdomain',
+    url='https://pypi.python.org/pypi/sphinxcontrib-httpdomain/1.5.0',
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
@@ -23,3 +23,4 @@ setup(
 	'Topic :: Utilities'
     ],
 )
+
