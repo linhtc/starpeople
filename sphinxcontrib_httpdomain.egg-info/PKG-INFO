@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: sphinxcontrib-httpdomain
+Version: 1.5.0
+Summary: Sphinx domain for HTTP APIs
+Home-page: https://pypi.python.org/pypi/sphinxcontrib-httpdomain/1.5.0
+Author: Hong Minhee
+Author-email: eric@ericholscher.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Documentation
+Classifier: Topic :: Utilities
