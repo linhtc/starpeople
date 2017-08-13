@@ -3,16 +3,23 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Star People Documentation's documentation!
-=====================================================
+Welcome to Star People Documentation!
+=====================================
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
+   :caption: User Documentation
 
    oauth
    profile
    work
    salary
+
+.. toctree::
+   :maxdepth: 2
+   :caption: About Vas Team
+
+   team
 
 Indices and tables
 ==================
