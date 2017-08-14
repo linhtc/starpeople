@@ -17,8 +17,9 @@ Welcome to Star People Documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: About Vas Team
+   :caption: About Documentation
 
+   rule
    team
 
 Indices and tables
