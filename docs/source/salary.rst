@@ -1,95 +1,51 @@
 Salary Information
 ==================
 
-This document will show you how to get Access Token Key with the WebService.
-You will have your docs imported on Read the Docs in 5 minutes,
-displayed beautifully for the world.
+Tài liệu này mô tả cách xem thông tin lương từ WebService. Bao gồm các phần sau:
 
+* :ref:`in-salary-get`
+* :ref:`in-salary-extra`
 
-OAuth include 2 steps:
+.. _in-salary-get:
 
-* :ref:`in-req-token`
-* :ref:`in-get-token`
+Get salary
+----------
+.. http:post::  /api/v1/salary/get
 
-.. _in-req-token:
-
-Request Token Code
-------------------
-.. http:post::  /api/v1/oauth/{id}/
-
-   :arg id: A Build id.
-   :arg abc: Abc id
+   :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg month: Phiếu lương tháng [1-12]
 
    .. sourcecode:: js
 
       {
-          "date": "2012-03-12T19:58:29.307403", 
-          "error": "SPHINX ERROR", 
-          "id": "91207", 
-          "output": "SPHINX OUTPUT", 
-          "project": "/api/v1/project/2599/", 
-          "resource_uri": "/api/v1/build/91207/", 
-          "setup": "HEAD is now at cd00d00 Merge pull request #181 from Nagyman/solr_setup\n", 
-          "setup_error": "", 
-          "state": "finished", 
-          "success": true, 
-          "type": "html", 
-          "version": "/api/v1/version/37405/"
+          "access_token": "_HASH_", 
+          "month": "1"
       }
 
 
-   :>json string date: Date of Build.
-   :>json string error: Error from Sphinx build process.
-   :>json string id: Build id.
-   :>json string output: Output from Sphinx build process.
-   :>json string project: URI for Project of Build.
-   :>json string resource_uri: URI for Build.
-   :>json string setup: Setup output from Sphinx build process.
-   :>json string setup_error: Setup error from Sphinx build process.
-   :>json string state: "triggered", "building", or "finished"
-   :>json boolean success: Was build successful?
-   :>json string type: Build type ("html", "pdf", "man", or "epub")
-   :>json string version: URI for Version of Build.
+   :>json boolean status: Trạng thái xử lý của Server.
+   :>json string fullname: Họ và tên.
+   :>json string deparment: Bộ phận.
+   :>json string salary: Lương thực lĩnh.
 
 
+.. _in-salary-extra:
 
-.. _in-get-token:
-
-Get Access Token Key
+Extra salary
 --------------------
-.. http:post::  /api/v1/oauth/{id}/
+.. http:post::  /api/v1/salary/extra
 
-   :arg id: A Build id.
-   :arg abc: Abc id
+   :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg deal: Mức yêu cầu cộng thêm.
+   :arg reason: Lý do.
 
    .. sourcecode:: js
 
       {
-          "date": "2012-03-12T19:58:29.307403",
-          "error": "SPHINX ERROR",
-          "id": "91207",
-          "output": "SPHINX OUTPUT",
-          "project": "/api/v1/project/2599/",
-          "resource_uri": "/api/v1/build/91207/",
-          "setup": "HEAD is now at cd00d00 Merge pull request #181 from Nagyman/solr_setup\n",
-          "setup_error": "",
-          "state": "finished",
-          "success": true,
-          "type": "html",
-          "version": "/api/v1/version/37405/"
+          "access_token": "_HASH_",
+          "deal": "50.000",
+          "reason": "Thiếu 50k nữa mới được vào Casino"
       }
 
 
-   :>json string date: Date of Build.
-   :>json string error: Error from Sphinx build process.
-   :>json string id: Build id.
-   :>json string output: Output from Sphinx build process.
-   :>json string project: URI for Project of Build.
-   :>json string resource_uri: URI for Build.
-   :>json string setup: Setup output from Sphinx build process.
-   :>json string setup_error: Setup error from Sphinx build process.
-   :>json string state: "triggered", "building", or "finished"
-   :>json boolean success: Was build successful?
-   :>json string type: Build type ("html", "pdf", "man", or "epub")
-   :>json string version: URI for Version of Build.
-
+   :>json boolean status: Trạng thái xử lý của Server.

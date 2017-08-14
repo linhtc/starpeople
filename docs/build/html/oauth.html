@@ -173,8 +173,8 @@
 <h1>OAuth<a class="headerlink" href="#oauth" title="Permalink to this headline">¶</a></h1>
 <p>Tài liệu này mô tả cách Ứng dụng lấy Access Token Key từ WebService. Bao gồm 2 bước sau:</p>
 <ul class="simple">
-<li><a class="reference internal" href="work.html#in-req-token"><span class="std std-ref">Request Token Code</span></a></li>
-<li><a class="reference internal" href="work.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a></li>
+<li><a class="reference internal" href="#in-req-token"><span class="std std-ref">Request Token Code</span></a></li>
+<li><a class="reference internal" href="#in-get-token"><span class="std std-ref">Get Access Token Key</span></a></li>
 </ul>
 <div class="section" id="request-token-code">
 <span id="in-req-token"></span><h2>Request Token Code<a class="headerlink" href="#request-token-code" title="Permalink to this headline">¶</a></h2>
@@ -229,7 +229,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>token_code</strong> &#8211; Token Code lấy được ở bước <a class="reference internal" href="work.html#in-req-token"><span class="std std-ref">Request Token Code</span></a>.</li>
+<li><strong>token_code</strong> &#8211; Token Code lấy được ở bước <a class="reference internal" href="#in-req-token"><span class="std std-ref">Request Token Code</span></a>.</li>
 </ul>
 </td>
 </tr>
@@ -246,6 +246,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>user_id</strong> (<em>string</em>) &#8211; ID định danh.</li>
 <li><strong>access_token</strong> (<em>string</em>) &#8211; Access Token Key.</li>
 <li><strong>expiration</strong> (<em>string</em>) &#8211; Thời gian hết hiệu lực type (&#8220;Y-m-d H:i:s&#8221;).</li>
 </ul>

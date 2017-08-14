@@ -46,5 +46,6 @@ Get Access Token Key
       }
 
 
+   :>json string user_id: ID định danh.
    :>json string access_token: Access Token Key.
    :>json string expiration: Thời gian hết hiệu lực type ("Y-m-d H:i:s").

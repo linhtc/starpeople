@@ -97,8 +97,25 @@
 <li class="toctree-l1"><a class="reference internal" href="oauth.html">OAuth</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profile.html">Employee Profile</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Work Activity</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#request-token-code">Request Token Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#get-access-token-key">Get Access Token Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#timekeeping-activity">Timekeeping activity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#check-in">Check-In</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-out">Check-Out</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#absent-activity">Absent activity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apply-for-absence">Apply for absence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#absence-approval">Absence approval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#absence-table">Absence table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#absence-detail">Absence detail</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#overtime-activity">Overtime activity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apply-for-ot">Apply for OT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overtime-approval">Overtime approval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overtime-table">Overtime table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overtime-detail">Overtime detail</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="salary.html">Salary Information</a></li>
@@ -171,44 +188,34 @@
             
   <div class="section" id="work-activity">
 <h1>Work Activity<a class="headerlink" href="#work-activity" title="Permalink to this headline">¶</a></h1>
-<p>This document will show you how to get Access Token Key with the WebService.
-You will have your docs imported on Read the Docs in 5 minutes,
-displayed beautifully for the world.</p>
-<p>OAuth include 2 steps:</p>
+<p>Tài liệu này mô tả cách các phần liên quan đến Quản lý công việc. Bao gồm:</p>
 <ul class="simple">
-<li><a class="reference internal" href="#in-req-token"><span class="std std-ref">Request Token Code</span></a></li>
-<li><a class="reference internal" href="#in-get-token"><span class="std std-ref">Get Access Token Key</span></a></li>
+<li><a class="reference internal" href="#in-work-timekeeping"><span class="std std-ref">Timekeeping activity</span></a></li>
+<li><a class="reference internal" href="#in-work-absent"><span class="std std-ref">Absent activity</span></a></li>
+<li><a class="reference internal" href="#in-work-overtime"><span class="std std-ref">Overtime activity</span></a></li>
 </ul>
-<div class="section" id="request-token-code">
-<span id="in-req-token"></span><h2>Request Token Code<a class="headerlink" href="#request-token-code" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="timekeeping-activity">
+<span id="in-work-timekeeping"></span><h2>Timekeeping activity<a class="headerlink" href="#timekeeping-activity" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="check-in">
+<h3>Check-In<a class="headerlink" href="#check-in" title="Permalink to this headline">¶</a></h3>
 <dl class="post">
-<dt id="post--api-v1-oauth-id-">
-<code class="descname">POST </code><code class="descname">/api/v1/oauth/{id}/</code><a class="headerlink" href="#post--api-v1-oauth-id-" title="Permalink to this definition">¶</a></dt>
+<dt id="post--api-v1-works-timekeeping-checkin">
+<code class="descname">POST </code><code class="descname">/api/v1/works/timekeeping/checkin</code><a class="headerlink" href="#post--api-v1-works-timekeeping-checkin" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> &#8211; A Build id.</li>
-<li><strong>abc</strong> &#8211; Abc id</li>
+<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>location</strong> &#8211; (lat,long) Kinh độ, vĩ độ thực hiện chấm công vào.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;date&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-03-12T19:58:29.307403&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="s2">&quot;SPHINX ERROR&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;91207&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;output&quot;</span><span class="o">:</span> <span class="s2">&quot;SPHINX OUTPUT&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;project&quot;</span><span class="o">:</span> <span class="s2">&quot;/api/v1/project/2599/&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;resource_uri&quot;</span><span class="o">:</span> <span class="s2">&quot;/api/v1/build/91207/&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;setup&quot;</span><span class="o">:</span> <span class="s2">&quot;HEAD is now at cd00d00 Merge pull request #181 from Nagyman/solr_setup\n&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;setup_error&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;state&quot;</span><span class="o">:</span> <span class="s2">&quot;finished&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;success&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;html&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;/api/v1/version/37405/&quot;</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;[10.785092,106.6913373]&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -218,18 +225,8 @@ displayed beautifully for the world.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>date</strong> (<em>string</em>) &#8211; Date of Build.</li>
-<li><strong>error</strong> (<em>string</em>) &#8211; Error from Sphinx build process.</li>
-<li><strong>id</strong> (<em>string</em>) &#8211; Build id.</li>
-<li><strong>output</strong> (<em>string</em>) &#8211; Output from Sphinx build process.</li>
-<li><strong>project</strong> (<em>string</em>) &#8211; URI for Project of Build.</li>
-<li><strong>resource_uri</strong> (<em>string</em>) &#8211; URI for Build.</li>
-<li><strong>setup</strong> (<em>string</em>) &#8211; Setup output from Sphinx build process.</li>
-<li><strong>setup_error</strong> (<em>string</em>) &#8211; Setup error from Sphinx build process.</li>
-<li><strong>state</strong> (<em>string</em>) &#8211; &#8220;triggered&#8221;, &#8220;building&#8221;, or &#8220;finished&#8221;</li>
-<li><strong>success</strong> (<em>boolean</em>) &#8211; Was build successful?</li>
-<li><strong>type</strong> (<em>string</em>) &#8211; Build type (&#8220;html&#8221;, &#8220;pdf&#8221;, &#8220;man&#8221;, or &#8220;epub&#8221;)</li>
-<li><strong>version</strong> (<em>string</em>) &#8211; URI for Version of Build.</li>
+<li><strong>status</strong> (<em>string</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> &#8211; Thời gian Server ghi nhận (&#8220;Y-m-d H:i:s&#8221;).</li>
 </ul>
 </td>
 </tr>
@@ -238,36 +235,26 @@ displayed beautifully for the world.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="get-access-token-key">
-<span id="in-get-token"></span><h2>Get Access Token Key<a class="headerlink" href="#get-access-token-key" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="check-out">
+<h3>Check-Out<a class="headerlink" href="#check-out" title="Permalink to this headline">¶</a></h3>
 <dl class="post">
-<dt id="post--api-v1-oauth-id-">
-<code class="descname">POST </code><code class="descname">/api/v1/oauth/{id}/</code><a class="headerlink" href="#post--api-v1-oauth-id-" title="Permalink to this definition">¶</a></dt>
+<dt id="post--api-v1-works-timekeeping-checkout">
+<code class="descname">POST </code><code class="descname">/api/v1/works/timekeeping/checkout</code><a class="headerlink" href="#post--api-v1-works-timekeeping-checkout" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> &#8211; A Build id.</li>
-<li><strong>abc</strong> &#8211; Abc id</li>
+<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>location</strong> &#8211; (lat,long) Kinh độ, vĩ độ thực hiện chấm công ra.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;date&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-03-12T19:58:29.307403&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="s2">&quot;SPHINX ERROR&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;91207&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;output&quot;</span><span class="o">:</span> <span class="s2">&quot;SPHINX OUTPUT&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;project&quot;</span><span class="o">:</span> <span class="s2">&quot;/api/v1/project/2599/&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;resource_uri&quot;</span><span class="o">:</span> <span class="s2">&quot;/api/v1/build/91207/&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;setup&quot;</span><span class="o">:</span> <span class="s2">&quot;HEAD is now at cd00d00 Merge pull request #181 from Nagyman/solr_setup\n&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;setup_error&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;state&quot;</span><span class="o">:</span> <span class="s2">&quot;finished&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;success&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;html&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;/api/v1/version/37405/&quot;</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;[10.785092,106.6913373]&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -277,18 +264,8 @@ displayed beautifully for the world.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>date</strong> (<em>string</em>) &#8211; Date of Build.</li>
-<li><strong>error</strong> (<em>string</em>) &#8211; Error from Sphinx build process.</li>
-<li><strong>id</strong> (<em>string</em>) &#8211; Build id.</li>
-<li><strong>output</strong> (<em>string</em>) &#8211; Output from Sphinx build process.</li>
-<li><strong>project</strong> (<em>string</em>) &#8211; URI for Project of Build.</li>
-<li><strong>resource_uri</strong> (<em>string</em>) &#8211; URI for Build.</li>
-<li><strong>setup</strong> (<em>string</em>) &#8211; Setup output from Sphinx build process.</li>
-<li><strong>setup_error</strong> (<em>string</em>) &#8211; Setup error from Sphinx build process.</li>
-<li><strong>state</strong> (<em>string</em>) &#8211; &#8220;triggered&#8221;, &#8220;building&#8221;, or &#8220;finished&#8221;</li>
-<li><strong>success</strong> (<em>boolean</em>) &#8211; Was build successful?</li>
-<li><strong>type</strong> (<em>string</em>) &#8211; Build type (&#8220;html&#8221;, &#8220;pdf&#8221;, &#8220;man&#8221;, or &#8220;epub&#8221;)</li>
-<li><strong>version</strong> (<em>string</em>) &#8211; URI for Version of Build.</li>
+<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>written_time</strong> (<em>string</em>) &#8211; Thời gian Server ghi nhận (&#8220;Y-m-d H:i:s&#8221;).</li>
 </ul>
 </td>
 </tr>
@@ -296,6 +273,337 @@ displayed beautifully for the world.</p>
 </table>
 </dd></dl>
 
+</div>
+</div>
+<div class="section" id="absent-activity">
+<span id="in-work-absent"></span><h2>Absent activity<a class="headerlink" href="#absent-activity" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="apply-for-absence">
+<h3>Apply for absence<a class="headerlink" href="#apply-for-absence" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1-works-absent-apply">
+<code class="descname">POST </code><code class="descname">/api/v1/works/absent/apply</code><a class="headerlink" href="#post--api-v1-works-absent-apply" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>start_time</strong> &#8211; Thời gian bắt đầu.</li>
+<li><strong>end_time</strong> &#8211; Thời gian kết thúc.</li>
+<li><strong>reason</strong> &#8211; Lý do nghỉ phép.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-14 08:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-15 08:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Bệnh rất nặng :((&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="absence-approval">
+<h3>Absence approval<a class="headerlink" href="#absence-approval" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1-works-absent-confirm">
+<code class="descname">POST </code><code class="descname">/api/v1/works/absent/confirm</code><a class="headerlink" href="#post--api-v1-works-absent-confirm" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>absence_id</strong> &#8211; ID của đơn xin phép.</li>
+<li><strong>approval</strong> &#8211; Đồng ý hay từ chối (1/0).</li>
+<li><strong>message</strong> &#8211; Lời nhắn đến người gửi đơn.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;absence_id&quot;</span><span class="o">:</span> <span class="s2">&quot;19863&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;approval&quot;</span><span class="o">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Nghỉ luôn thì được ^_^&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="absence-table">
+<h3>Absence table<a class="headerlink" href="#absence-table" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1-works-absent-table">
+<code class="descname">POST </code><code class="descname">/api/v1/works/absent/table</code><a class="headerlink" href="#post--api-v1-works-absent-table" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>list</strong> (<em>array</em>) &#8211; Danh sách các <a class="reference internal" href="#absence-detail">Absence detail</a> object..</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="absence-detail">
+<h3>Absence detail<a class="headerlink" href="#absence-detail" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1-works-absent-detail">
+<code class="descname">POST </code><code class="descname">/api/v1/works/absent/detail</code><a class="headerlink" href="#post--api-v1-works-absent-detail" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>absence_id</strong> &#8211; ID của đơn xin phép.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;absence_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>fullname</strong> (<em>string</em>) &#8211; Người nộp đơn.</li>
+<li><strong>absent_time</strong> (<em>string</em>) &#8211; Thời gian nghỉ [start to end].</li>
+<li><strong>reason</strong> (<em>string</em>) &#8211; Lý do nghỉ.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="overtime-activity">
+<span id="in-work-overtime"></span><h2>Overtime activity<a class="headerlink" href="#overtime-activity" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="apply-for-ot">
+<h3>Apply for OT<a class="headerlink" href="#apply-for-ot" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1-works-overtime-apply">
+<code class="descname">POST </code><code class="descname">/api/v1/works/overtime/apply</code><a class="headerlink" href="#post--api-v1-works-overtime-apply" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>start_time</strong> &#8211; Thời gian bắt đầu.</li>
+<li><strong>end_time</strong> &#8211; Thời gian kết thúc.</li>
+<li><strong>reason</strong> &#8211; Lý do tăng ca.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-14 08:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-15 08:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;ItViec - Ít mà chất nên làm chậm deadline ;((&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="overtime-approval">
+<h3>Overtime approval<a class="headerlink" href="#overtime-approval" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1-works-overtime-confirm">
+<code class="descname">POST </code><code class="descname">/api/v1/works/overtime/confirm</code><a class="headerlink" href="#post--api-v1-works-overtime-confirm" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>overtime_id</strong> &#8211; ID của đơn yêu cầu tăng ca.</li>
+<li><strong>approval</strong> &#8211; Đồng ý hay từ chối (1/0).</li>
+<li><strong>message</strong> &#8211; Lời nhắn đến người gửi đơn.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;overtime_id&quot;</span><span class="o">:</span> <span class="s2">&quot;19863&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;approval&quot;</span><span class="o">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Người ta làm 5&#39; còn em là 1 tuần là như nào?&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="overtime-table">
+<h3>Overtime table<a class="headerlink" href="#overtime-table" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1-works-overtime-table">
+<code class="descname">POST </code><code class="descname">/api/v1/works/overtime/table</code><a class="headerlink" href="#post--api-v1-works-overtime-table" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>list</strong> (<em>array</em>) &#8211; Danh sách các <a class="reference internal" href="#overtime-detail">Overtime detail</a> object..</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="overtime-detail">
+<h3>Overtime detail<a class="headerlink" href="#overtime-detail" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1-works-overtime-detail">
+<code class="descname">POST </code><code class="descname">/api/v1/works/overtime/detail</code><a class="headerlink" href="#post--api-v1-works-overtime-detail" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>overtime_id</strong> &#8211; ID của đơn yêu cầu.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;overtime_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>fullname</strong> (<em>string</em>) &#8211; Người nộp đơn.</li>
+<li><strong>absent_time</strong> (<em>string</em>) &#8211; Thời gian yêu cầu tính tăng ca [start to end].</li>
+<li><strong>reason</strong> (<em>string</em>) &#8211; Lý do yêu cầu.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 </div>
 </div>
 
