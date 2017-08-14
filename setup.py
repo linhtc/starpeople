@@ -1,5 +1,12 @@
+import io
 from setuptools import setup, find_packages
-#sys.path.insert(0, os.path.abspath('../..'))
+import sys
+
+def readfile(filename):
+    with io.open(filename, encoding="utf-8") as stream:
+        return stream.read().split("\n")
+
+requires = readfile("requirements.txt")
 
 setup(
     name='sphinxcontrib-httpdomain',
@@ -7,9 +14,12 @@ setup(
     description='Sphinx domain for HTTP APIs',
     author='Hong Minhee',
     author_email='eric@ericholscher.com',
-    url='https://pypi.python.org/pypi/sphinxcontrib-httpdomain/1.5.0',
+    url='https://github.com/linhtc/starpeople',
+    download_url='https://pypi.python.org/pypi/sphinxcontrib-httpdomain/1.5.0',
     packages=find_packages(),
     include_package_data=True,
+    install_requires=requires,
+    namespace_packages=['sphinxcontrib'],
     zip_safe=False,
     classifiers=[
         'Development Status :: 5 - Production/Stable',
