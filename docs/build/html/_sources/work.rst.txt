@@ -231,5 +231,5 @@ Overtime detail
 
    :>json boolean status: Trạng thái xử lý của Server.
    :>json string fullname: Người nộp đơn.
-   :>json string absent_time: Thời gian yêu cầu tính tăng ca [start to end].
+   :>json string overtime_time: Thời gian yêu cầu tính tăng ca [start to end].
    :>json string reason: Lý do yêu cầu.
