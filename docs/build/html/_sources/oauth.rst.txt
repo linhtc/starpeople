@@ -12,10 +12,10 @@ Request Token Code
 ------------------
 .. http:post::  /api/v1/oauth/request
 
-   :arg imei: IMEI của thiết bị
-   :arg mac: Địa chỉ MAC của thiết bị
-   :arg username: Tên nhân viên đăng nhập
-   :arg password: Mật khẩu
+   :arg imei: IMEI của thiết bị.
+   :arg mac: Địa chỉ MAC của thiết bị.
+   :arg username: Tên người dùng.
+   :arg password: Mật khẩu.
 
    .. sourcecode:: js
 

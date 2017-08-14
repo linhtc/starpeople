@@ -19,13 +19,17 @@ Check-In
 .. http:post::  /api/v1/works/timekeeping/checkin
 
    :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
    :arg location: (lat,long) Kinh độ, vĩ độ thực hiện chấm công vào.
 
    .. sourcecode:: js
 
       {
           "access_token": "_HASH_",
-          "fullname": "[10.785092,106.6913373]"
+          "user_id": "18963",
+          "client_id": "18963",
+          "location": "[10.785092,106.6913373]"
       }
 
 
@@ -39,13 +43,17 @@ Check-Out
 .. http:post::  /api/v1/works/timekeeping/checkout
 
    :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
    :arg location: (lat,long) Kinh độ, vĩ độ thực hiện chấm công ra.
 
    .. sourcecode:: js
 
       {
           "access_token": "_HASH_",
-          "fullname": "[10.785092,106.6913373]"
+          "user_id": "18963",
+          "client_id": "18963",
+          "location": "[10.785092,106.6913373]"
       }
 
 
@@ -64,14 +72,19 @@ Apply for absence
 .. http:post::  /api/v1/works/absent/apply
 
    :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
    :arg start_time: Thời gian bắt đầu.
    :arg end_time: Thời gian kết thúc.
-   :arg reason: Lý do nghỉ phép.
+   :arg kind: Loại phép.
+   :arg reason: Lý do nghỉ.
 
    .. sourcecode:: js
 
       {
           "access_token": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963",
           "start_time": "2017-08-14 08:00",
           "end_time": "2017-08-15 08:00",
           "reason": "Bệnh rất nặng :(("
@@ -110,11 +123,15 @@ Absence table
 .. http:post::  /api/v1/works/absent/table
 
    :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
 
    .. sourcecode:: js
 
       {
-          "access_token": "_HASH_"
+          "access_token": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963"
       }
 
 
@@ -142,6 +159,33 @@ Absence detail
    :>json string fullname: Người nộp đơn.
    :>json string absent_time: Thời gian nghỉ [start to end].
    :>json string reason: Lý do nghỉ.
+
+
+Absence management
+~~~~~~~~~~~~~~~~~~
+
+.. http:post::  /api/v1/works/absent/management
+
+   :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg user_id: ID người dùng (quản lý hoặc nhân viên).
+   :arg client_id: ID client.
+
+   .. sourcecode:: js
+
+      {
+          "access_token": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963"
+      }
+
+
+   :>json boolean status: Trạng thái xử lý của Server.
+   :>json integer remain: Số ngày phép còn lại.
+   :>json integer total: Tất cả đơn đã nhận/ gửi.
+   :>json integer waiting_for_approval: Số đơn chờ duyệt.
+   :>json integer total_approval: Số đơn đã/ đã được duyệt.
+   :>json integer total_unapproved: Số đơn không/ không được duyệt.
+   :>json integer total_update: Số đơn yêu cầu/ được yêu cầu chỉnh sửa.
    
 .. _in-work-overtime:
 
@@ -233,3 +277,29 @@ Overtime detail
    :>json string fullname: Người nộp đơn.
    :>json string overtime_time: Thời gian yêu cầu tính tăng ca [start to end].
    :>json string reason: Lý do yêu cầu.
+
+
+Overtime management
+~~~~~~~~~~~~~~~~~~~
+
+.. http:post::  /api/v1/works/overtime/management
+
+   :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg user_id: ID người dùng (quản lý hoặc nhân viên).
+   :arg client_id: ID client.
+
+   .. sourcecode:: js
+
+      {
+          "access_token": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963"
+      }
+
+
+   :>json boolean status: Trạng thái xử lý của Server.
+   :>json integer total: Tất cả đơn đã nhận/ gửi.
+   :>json integer waiting_for_approval: Số đơn chờ duyệt.
+   :>json integer total_approval: Số đơn đã/ đã được duyệt.
+   :>json integer total_unapproved: Số đơn không/ không được duyệt.
+   :>json integer total_update: Số đơn yêu cầu/ được yêu cầu chỉnh sửa.

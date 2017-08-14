@@ -13,22 +13,27 @@ Get profile
 .. http:post::  /api/v1/profile/get
 
    :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
 
    .. sourcecode:: js
 
       {
-          "access_token": "_HASH_"
+          "access_token": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963"
       }
 
 
    :>json boolean status: Trạng thái xử lý của Server.
    :>json integer user_id: ID định danh.
    :>json string fullname: Họ và tên.
+   :>json integer position: Vị trí.
    :>json string deparment: Bộ phận.
-   :>json string email: Thư điện tử.
+   :>json string branch: Chi nhánh.
+   :>json string dob: Ngày sinh.
    :>json string phone: Điện thoại.
-   :>json string cmnd: Chứng minh thư, hộ chiếu.
-   :>json string address: Chỗ ở hiện tại.
+   :>json string email: Thư điện tử.
    :>json string avatar: Đường dẫn ảnh.
 
 
@@ -39,6 +44,8 @@ Update profile
 .. http:post::  /api/v1/profile/set
 
    :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
    :arg fullname: Họ và tên.
    :arg email: Email.
    :arg phone: Điện thoại.
@@ -48,6 +55,8 @@ Update profile
 
       {
           "access_token": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963",
           "fullname": "Leon Tran",
           "email": "leon.tran@mobistar.vn",
           "phone": "0961095661",

@@ -187,13 +187,17 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>user_id</strong> &#8211; ID người dùng.</li>
+<li><strong>client_id</strong> &#8211; ID client.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -206,11 +210,12 @@
 <li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
 <li><strong>user_id</strong> (<em>integer</em>) &#8211; ID định danh.</li>
 <li><strong>fullname</strong> (<em>string</em>) &#8211; Họ và tên.</li>
+<li><strong>position</strong> (<em>integer</em>) &#8211; Vị trí.</li>
 <li><strong>deparment</strong> (<em>string</em>) &#8211; Bộ phận.</li>
-<li><strong>email</strong> (<em>string</em>) &#8211; Thư điện tử.</li>
+<li><strong>branch</strong> (<em>string</em>) &#8211; Chi nhánh.</li>
+<li><strong>dob</strong> (<em>string</em>) &#8211; Ngày sinh.</li>
 <li><strong>phone</strong> (<em>string</em>) &#8211; Điện thoại.</li>
-<li><strong>cmnd</strong> (<em>string</em>) &#8211; Chứng minh thư, hộ chiếu.</li>
-<li><strong>address</strong> (<em>string</em>) &#8211; Chỗ ở hiện tại.</li>
+<li><strong>email</strong> (<em>string</em>) &#8211; Thư điện tử.</li>
 <li><strong>avatar</strong> (<em>string</em>) &#8211; Đường dẫn ảnh.</li>
 </ul>
 </td>
@@ -231,6 +236,8 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>user_id</strong> &#8211; ID người dùng.</li>
+<li><strong>client_id</strong> &#8211; ID client.</li>
 <li><strong>fullname</strong> &#8211; Họ và tên.</li>
 <li><strong>email</strong> &#8211; Email.</li>
 <li><strong>phone</strong> &#8211; Điện thoại.</li>
@@ -242,6 +249,8 @@
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;Leon Tran&quot;</span><span class="p">,</span>
     <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
     <span class="s2">&quot;phone&quot;</span><span class="o">:</span> <span class="s2">&quot;0961095661&quot;</span><span class="p">,</span>
