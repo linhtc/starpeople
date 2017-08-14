@@ -1,6 +1,0 @@
-setup.py
-sphinxcontrib_httpdomain.egg-info/PKG-INFO
-sphinxcontrib_httpdomain.egg-info/SOURCES.txt
-sphinxcontrib_httpdomain.egg-info/dependency_links.txt
-sphinxcontrib_httpdomain.egg-info/not-zip-safe
-sphinxcontrib_httpdomain.egg-info/top_level.txt
