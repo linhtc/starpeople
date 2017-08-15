@@ -96,12 +96,18 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="oauth.html">OAuth</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profile.html">Employee Profile</a></li>
-<li class="toctree-l1"><a class="reference internal" href="work.html">Work Activity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work.html">Work Activities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="salary.html">Salary Information</a></li>
 </ul>
 <p class="caption"><span class="caption-text">About Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">General Rules</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">General Rules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#response-header">Response header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#response-status">Response status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kind-definition">Kind definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#approval-definition">Approval definition</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="team.html">Read the Docs Team</a></li>
 </ul>
 
@@ -168,14 +174,51 @@
             
   <div class="section" id="general-rules">
 <h1>General Rules<a class="headerlink" href="#general-rules" title="Permalink to this headline">¶</a></h1>
-<p>Phần này quy định các quy định RESTful</p>
+<p>Phần này mô tả các quy định theo chuẩn RESTful, các biến và giá trị mặc định cần thiết.</p>
+<div class="section" id="response-header">
+<span id="in-rule-res-header"></span><h2>Response header<a class="headerlink" href="#response-header" title="Permalink to this headline">¶</a></h2>
 <p>Response header phải là kiểu JSON:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;integer&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;boolean&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">:</span><span class="s2">&quot;^_^&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Trong JSON object trả về luôn có key status (viết thường). Status này quy định trạng thái xử lý của Server:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</div>
+<div class="section" id="response-status">
+<span id="in-rule-res-status"></span><h2>Response status<a class="headerlink" href="#response-status" title="Permalink to this headline">¶</a></h2>
+<p>Trong JSON object trả về luôn có key status quy định trạng thái xử lý của Server.
+Là một biến kiểu <code class="docutils literal"><span class="pre">boolean</span></code> với hai trạng thái:</p>
+<ul class="simple">
+<li>true - Server hoàn thành việc xử lý.</li>
+<li>false - Server hoàn thành việc xử lý kèm cảnh báo.</li>
+</ul>
+<p>Nếu <code class="docutils literal"><span class="pre">false</span></code> thì thiết bị sẽ tìm thêm key <code class="docutils literal"><span class="pre">message</span></code> để xác định tình trạng:</p>
+<div class="highlight-restructuredtext"><div class="highlight"><pre><span></span># True
+<span class="p">..</span> <span class="ow">response</span><span class="p">::</span>
+    <span class="nc">:status:</span> <span class="nf">true</span>
+
+# False
+<span class="p">..</span> <span class="ow">response</span><span class="p">::</span>
+    <span class="nc">:status:</span> <span class="nf">false</span>
+    <span class="nc">:message:</span> <span class="nf">Something wrong ;((</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="kind-definition">
+<span id="in-rule-kind-mapping"></span><h2>Kind definition<a class="headerlink" href="#kind-definition" title="Permalink to this headline">¶</a></h2>
+<p>Là một biến kiểu <code class="docutils literal"><span class="pre">integer</span></code> xác định loại phép.</p>
+<ul class="simple">
+<li>0 - Nghỉ phép năm.</li>
+<li>1 - Nghỉ thai sản.</li>
+<li>2 - Nghỉ phép không lương.</li>
+</ul>
+</div>
+<div class="section" id="approval-definition">
+<span id="in-rule-approval-mapping"></span><h2>Approval definition<a class="headerlink" href="#approval-definition" title="Permalink to this headline">¶</a></h2>
+<p>Là một biến kiểu <code class="docutils literal"><span class="pre">integer</span></code> xác định trạng thái duyệt đơn nghỉ phép, tăng ca.</p>
+<ul class="simple">
+<li>0 - Không duyệt.</li>
+<li>1 - Đồng ý.</li>
+<li>2 - Yêu cầu chỉnh sửa.</li>
+</ul>
 </div>
 </div>
 

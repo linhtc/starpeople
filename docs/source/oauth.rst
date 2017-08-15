@@ -27,7 +27,7 @@ Request Token Code
       }
 
 
-   :>json boolean status: Trạng thái xử lý của Server.
+   :>json boolean status: :ref:`in-rule-res-status`.
    :>json string token_code: Token code Server cấp phát.
 
 
@@ -37,7 +37,7 @@ Get Access Token Key
 --------------------
 .. http:post::  /api/v1/oauth/get
 
-   :arg token_code: Token Code lấy được ở bước :ref:`in-req-token`.
+   :arg access_token: Xem :ref:`in-get-token`.
 
    .. sourcecode:: js
 

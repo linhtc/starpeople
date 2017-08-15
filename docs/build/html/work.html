@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Work Activity &mdash; STAR PEOPLE MBS 1.0.1 documentation</title>
+  <title>Work Activities &mdash; STAR PEOPLE MBS 1.0.1 documentation</title>
   
 
   
@@ -96,7 +96,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="oauth.html">OAuth</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profile.html">Employee Profile</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Work Activity</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Work Activities</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#timekeeping-activity">Timekeeping activity</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#check-in">Check-In</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-out">Check-Out</a></li>
@@ -170,7 +170,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Work Activity</li>
+      <li>Work Activities</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,9 +189,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="work-activity">
-<h1>Work Activity<a class="headerlink" href="#work-activity" title="Permalink to this headline">¶</a></h1>
-<p>Tài liệu này mô tả cách các phần liên quan đến Quản lý công việc. Bao gồm:</p>
+  <div class="section" id="work-activities">
+<h1>Work Activities<a class="headerlink" href="#work-activities" title="Permalink to this headline">¶</a></h1>
+<p>Tài liệu này mô tả các phần liên quan đến Quản lý công việc. Bao gồm:</p>
 <ul class="simple">
 <li><a class="reference internal" href="#in-work-timekeeping"><span class="std std-ref">Timekeeping activity</span></a></li>
 <li><a class="reference internal" href="#in-work-absent"><span class="std std-ref">Absent activity</span></a></li>
@@ -209,7 +209,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng.</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 <li><strong>location</strong> &#8211; (lat,long) Kinh độ, vĩ độ thực hiện chấm công vào.</li>
@@ -232,7 +232,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>string</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> (<em>string</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
 <li><strong>status</strong> &#8211; Thời gian Server ghi nhận (&#8220;Y-m-d H:i:s&#8221;).</li>
 </ul>
 </td>
@@ -252,7 +252,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng.</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 <li><strong>location</strong> &#8211; (lat,long) Kinh độ, vĩ độ thực hiện chấm công ra.</li>
@@ -275,7 +275,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
 <li><strong>written_time</strong> (<em>string</em>) &#8211; Thời gian Server ghi nhận (&#8220;Y-m-d H:i:s&#8221;).</li>
 </ul>
 </td>
@@ -298,12 +298,12 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng.</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 <li><strong>start_time</strong> &#8211; Thời gian bắt đầu.</li>
 <li><strong>end_time</strong> &#8211; Thời gian kết thúc.</li>
-<li><strong>kind</strong> &#8211; Loại phép.</li>
+<li><strong>kind</strong> &#8211; Loại phép (Xem <a class="reference internal" href="rule.html#in-rule-kind-mapping"><span class="std std-ref">Kind definition</span></a>).</li>
 <li><strong>reason</strong> &#8211; Lý do nghỉ.</li>
 </ul>
 </td>
@@ -316,6 +316,7 @@
     <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;start_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-14 08:00&quot;</span><span class="p">,</span>
     <span class="s2">&quot;end_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-15 08:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kind&quot;</span><span class="o">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
     <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Bệnh rất nặng :((&quot;</span>
 <span class="p">}</span>
 </pre></div>
@@ -326,7 +327,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
 </ul>
 </td>
 </tr>
@@ -345,9 +346,9 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
 <li><strong>absence_id</strong> &#8211; ID của đơn xin phép.</li>
-<li><strong>approval</strong> &#8211; Đồng ý hay từ chối (1/0).</li>
+<li><strong>approval</strong> &#8211; Phê duyệt (Xem <a class="reference internal" href="rule.html#in-rule-approval-mapping"><span class="std std-ref">Approval definition</span></a>).</li>
 <li><strong>message</strong> &#8211; Lời nhắn đến người gửi đơn.</li>
 </ul>
 </td>
@@ -368,7 +369,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
 </ul>
 </td>
 </tr>
@@ -387,7 +388,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng.</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 </ul>
@@ -408,7 +409,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
 <li><strong>list</strong> (<em>array</em>) &#8211; Danh sách các <a class="reference internal" href="#absence-detail">Absence detail</a> object..</li>
 </ul>
 </td>
@@ -428,7 +429,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
 <li><strong>absence_id</strong> &#8211; ID của đơn xin phép.</li>
 </ul>
 </td>
@@ -447,7 +448,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
 <li><strong>fullname</strong> (<em>string</em>) &#8211; Người nộp đơn.</li>
 <li><strong>absent_time</strong> (<em>string</em>) &#8211; Thời gian nghỉ [start to end].</li>
 <li><strong>reason</strong> (<em>string</em>) &#8211; Lý do nghỉ.</li>
@@ -469,7 +470,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng (quản lý hoặc nhân viên).</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 </ul>
@@ -490,7 +491,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
 <li><strong>remain</strong> (<em>integer</em>) &#8211; Số ngày phép còn lại.</li>
 <li><strong>total</strong> (<em>integer</em>) &#8211; Tất cả đơn đã nhận/ gửi.</li>
 <li><strong>waiting_for_approval</strong> (<em>integer</em>) &#8211; Số đơn chờ duyệt.</li>
@@ -518,7 +519,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
 <li><strong>start_time</strong> &#8211; Thời gian bắt đầu.</li>
 <li><strong>end_time</strong> &#8211; Thời gian kết thúc.</li>
 <li><strong>reason</strong> &#8211; Lý do tăng ca.</li>
@@ -541,7 +542,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
 </ul>
 </td>
 </tr>
@@ -560,9 +561,9 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
 <li><strong>overtime_id</strong> &#8211; ID của đơn yêu cầu tăng ca.</li>
-<li><strong>approval</strong> &#8211; Đồng ý hay từ chối (1/0).</li>
+<li><strong>approval</strong> &#8211; Phê duyệt (Xem <a class="reference internal" href="rule.html#in-rule-approval-mapping"><span class="std std-ref">Approval definition</span></a>).</li>
 <li><strong>message</strong> &#8211; Lời nhắn đến người gửi đơn.</li>
 </ul>
 </td>
@@ -583,7 +584,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
 </ul>
 </td>
 </tr>
@@ -602,7 +603,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
 </ul>
 </td>
 </tr>
@@ -619,7 +620,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
 <li><strong>list</strong> (<em>array</em>) &#8211; Danh sách các <a class="reference internal" href="#overtime-detail">Overtime detail</a> object..</li>
 </ul>
 </td>
@@ -639,7 +640,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
 <li><strong>overtime_id</strong> &#8211; ID của đơn yêu cầu.</li>
 </ul>
 </td>
@@ -658,7 +659,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
 <li><strong>fullname</strong> (<em>string</em>) &#8211; Người nộp đơn.</li>
 <li><strong>overtime_time</strong> (<em>string</em>) &#8211; Thời gian yêu cầu tính tăng ca [start to end].</li>
 <li><strong>reason</strong> (<em>string</em>) &#8211; Lý do yêu cầu.</li>
@@ -680,7 +681,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>access_token</strong> &#8211; Access Token Key lấy được ở bước <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng (quản lý hoặc nhân viên).</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 </ul>
@@ -701,7 +702,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; Trạng thái xử lý của Server.</li>
+<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
 <li><strong>total</strong> (<em>integer</em>) &#8211; Tất cả đơn đã nhận/ gửi.</li>
 <li><strong>waiting_for_approval</strong> (<em>integer</em>) &#8211; Số đơn chờ duyệt.</li>
 <li><strong>total_approval</strong> (<em>integer</em>) &#8211; Số đơn đã/ đã được duyệt.</li>

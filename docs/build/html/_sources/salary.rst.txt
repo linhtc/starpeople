@@ -12,7 +12,7 @@ Get salary
 ----------
 .. http:post::  /api/v1/salary/get
 
-   :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg access_token: Xem :ref:`in-get-token`.
    :arg month: Phiếu lương tháng [1-12]
 
    .. sourcecode:: js
@@ -23,7 +23,7 @@ Get salary
       }
 
 
-   :>json boolean status: Trạng thái xử lý của Server.
+   :>json boolean status: :ref:`in-rule-res-status`.
    :>json string fullname: Họ và tên.
    :>json string deparment: Bộ phận.
    :>json string salary: Lương thực lĩnh.
@@ -35,7 +35,7 @@ Extra salary
 --------------------
 .. http:post::  /api/v1/salary/extra
 
-   :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg access_token: Xem :ref:`in-get-token`.
    :arg deal: Mức yêu cầu cộng thêm.
    :arg reason: Lý do.
 
@@ -48,4 +48,4 @@ Extra salary
       }
 
 
-   :>json boolean status: Trạng thái xử lý của Server.
+   :>json boolean status: :ref:`in-rule-res-status`.

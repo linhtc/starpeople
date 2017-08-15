@@ -12,7 +12,7 @@ Get profile
 ------------------
 .. http:post::  /api/v1/profile/get
 
-   :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg access_token: Xem :ref:`in-get-token`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
 
@@ -25,7 +25,7 @@ Get profile
       }
 
 
-   :>json boolean status: Trạng thái xử lý của Server.
+   :>json boolean status: :ref:`in-rule-res-status`.
    :>json integer user_id: ID định danh.
    :>json string fullname: Họ và tên.
    :>json integer position: Vị trí.
@@ -43,7 +43,7 @@ Update profile
 --------------------
 .. http:post::  /api/v1/profile/set
 
-   :arg access_token: Access Token Key lấy được ở bước :ref:`in-get-token`.
+   :arg access_token: Xem :ref:`in-get-token`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
    :arg fullname: Họ và tên.
@@ -64,4 +64,4 @@ Update profile
       }
 
 
-   :>json boolean status: Trạng thái xử lý của Server.
+   :>json boolean status: :ref:`in-rule-res-status`.
