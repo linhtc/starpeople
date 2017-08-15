@@ -37,7 +37,7 @@ Get Access Token Key
 --------------------
 .. http:post::  /api/v1/oauth/get
 
-   :arg access_token: Xem :ref:`in-get-token`.
+   :arg token_code: Xem :ref:`in-req-token`.
 
    .. sourcecode:: js
 
