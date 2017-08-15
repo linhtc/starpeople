@@ -34,7 +34,7 @@ Check-In
 
 
    :>json boolean status: :ref:`in-rule-res-status`.
-   :>json string status: Thời gian Server ghi nhận ("Y-m-d H:i:s").
+   :>json string written_time: Thời gian Server ghi nhận ("Y-m-d H:i:s").
 
 
 Check-Out
