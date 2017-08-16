@@ -35,6 +35,7 @@ Members
 * `Eric Holscher <https://github.com/ericholscher>`_ (Pacific Time)
 * `Anthony Johnson <https://github.com/agjohnson>`_ (Pacific Time)
 * `Manuel Kaufmann <https://github.com/humitos>`_ (Central Time)
+* `Leon Tran <https://github.com/linhtc>`_ (Vietnam Time)
 * Your Name Here
 
 Feel free to ask any of us if you have questions or want to join!
@@ -64,6 +65,7 @@ Members
 * `Eric Holscher <https://github.com/ericholscher>`_ (Pacific Time)
 * `Anthony Johnson <https://github.com/agjohnson>`_ (Pacific Time)
 * `Matt Robenolt <https://github.com/mattrobenolt>`_ (Pacific Time)
+* `Leon Tran <https://github.com/linhtc>`_ (Vietnam Time)
 * Your Name Here
 
 Feel free to ask any of us if you have questions or want to join!
@@ -109,6 +111,7 @@ Members
 * `Anthony Johnson <https://github.com/agjohnson>`_
 * `Gregor Müllegger <https://github.com/gregmuellegger>`_
 * `Stein Magnus Jodal <https://github.com/jodal>`_
+* `Leon Tran <https://github.com/linhtc>`_
 * Your Name Here
 
 Feel free to ask any of us if you have questions or want to join!
