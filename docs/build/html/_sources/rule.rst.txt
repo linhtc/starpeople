@@ -3,6 +3,11 @@ General Rules
 
 Phần này mô tả các quy định theo chuẩn RESTful, các biến và giá trị mặc định cần thiết.
 
+.. note:: Tài liệu đang trong quá trình hoàn thiện và cải tiến cho phù hợp.
+          Chúng tôi ghi nhận và nhiệt tình chào đón người có trách nhiệm đóng góp để hoàn thành.
+          Mọi phản hồi về sai sót cũng như góp ý xin liên hệ qua email của VAS Team: labs.mobiistar@gmail.com.
+          Xin chân thành cảm ơn!
+          
 .. _in-rule-res-header:
 
 Response header
@@ -16,7 +21,7 @@ Response header phải là kiểu JSON::
 Response status
 ---------------
 Trong JSON object trả về luôn có key status quy định trạng thái xử lý của Server.
-Là một biến kiểu ``boolean`` với hai trạng thái:
+Là một biến kiểu ``boolean`` với hai giá trị:
 
 * true - Server hoàn thành việc xử lý.
 * false - Server hoàn thành việc xử lý kèm cảnh báo.
