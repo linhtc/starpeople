@@ -22,7 +22,7 @@ Request Token Code
       {
           "imei": "356938035643809", 
           "mac": "00:0a:95:9d:68:16", 
-          "username": "leon.tran@mobiistar.vn", 
+          "username": "leon.tran@mobistar.vn", 
           "password": "_HASH_" 
       }
 

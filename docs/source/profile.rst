@@ -47,7 +47,7 @@ Get profile
           "branch": "HCM",
           "dob": "1993-09-19",
           "phone": "0961095661",
-          "email": "leon.tran@mobiistar.vn",
+          "email": "leon.tran@mobistar.vn",
           "avatar": "https://cdn.mobiistar.vn/18963.png" 
       }
 
