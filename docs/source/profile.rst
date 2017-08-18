@@ -9,7 +9,7 @@ Tài liệu này mô tả cách sử dụng thông tin người dùng từ WebSe
 .. _in-profile-get:
 
 Get profile
-------------------
+-----------
 .. http:post::  /api/v1/profile/get
 
    :arg access_token: Xem :ref:`in-get-token`.
@@ -51,13 +51,11 @@ Get profile
           "avatar": "https://cdn.mobiistar.vn/18963.png" 
       }
 
-   
-
 
 .. _in-profile-update:
 
 Update profile
---------------------
+--------------
 .. http:post::  /api/v1/profile/set
 
    :arg access_token: Xem :ref:`in-get-token`.
