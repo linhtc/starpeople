@@ -30,6 +30,13 @@ Request Token Code
    :>json boolean status: :ref:`in-rule-res-status`.
    :>json string token_code: Token code Server cấp phát.
 
+   .. sourcecode:: js
+
+      {
+          "status": true,
+          "token_code": "_HASH_" 
+      }
+
 
 .. _in-get-token:
 
@@ -46,6 +53,18 @@ Get Access Token Key
       }
 
 
+   :>json boolean status: :ref:`in-rule-res-status`.
    :>json string user_id: ID định danh.
    :>json string access_token: Access Token Key.
    :>json string expiration: Thời gian hết hiệu lực type ("Y-m-d H:i:s").
+
+   .. sourcecode:: js
+
+      {
+          "status": true,
+          "user_id": "18963",
+          "access_token": "_HASH_",
+          "expiration": "2027-07-17 09:00:01" 
+      }
+
+

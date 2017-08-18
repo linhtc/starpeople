@@ -26,15 +26,32 @@ Get profile
 
 
    :>json boolean status: :ref:`in-rule-res-status`.
-   :>json integer user_id: ID định danh.
+   :>json string user_id: ID định danh.
    :>json string fullname: Họ và tên.
-   :>json integer position: Vị trí.
+   :>json string position: Vị trí.
    :>json string deparment: Bộ phận.
    :>json string branch: Chi nhánh.
    :>json string dob: Ngày sinh.
    :>json string phone: Điện thoại.
    :>json string email: Thư điện tử.
    :>json string avatar: Đường dẫn ảnh.
+
+   .. sourcecode:: js
+
+      {
+          "status": true,
+          "user_id": "18963",
+          "fullname": "Leon Tran",
+          "position": "DEV",
+          "deparment": "VAS",
+          "branch": "HCM",
+          "dob": "1993-09-19",
+          "phone": "0961095661",
+          "email": "leon.tran@mobiistar.vn",
+          "avatar": "https://cdn.mobiistar.vn/18963.png" 
+      }
+
+   
 
 
 .. _in-profile-update:
@@ -65,3 +82,11 @@ Update profile
 
 
    :>json boolean status: :ref:`in-rule-res-status`.
+
+   .. sourcecode:: js
+
+      {
+          "status": true
+      }
+
+

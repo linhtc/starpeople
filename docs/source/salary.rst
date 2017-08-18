@@ -25,8 +25,23 @@ Get salary
 
    :>json boolean status: :ref:`in-rule-res-status`.
    :>json string fullname: Họ và tên.
+   :>json string position: Vị trí.
    :>json string deparment: Bộ phận.
-   :>json string salary: Lương thực lĩnh.
+   :>json string branch: Chi nhánh.
+   :>json float salary: Lương thực lĩnh.
+
+   .. sourcecode:: js
+
+      {
+          "status": true,
+          "fullname": "Leon Tran",
+          "position": "DEV",
+          "deparment": "VAS",
+          "branch": "HCM",
+          "salary": 1234.0
+      }
+
+   
 
 
 .. _in-salary-extra:
@@ -49,3 +64,11 @@ Extra salary
 
 
    :>json boolean status: :ref:`in-rule-res-status`.
+
+   .. sourcecode:: js
+
+      {
+          "status": true
+      }
+
+   

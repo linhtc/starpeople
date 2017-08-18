@@ -3,10 +3,10 @@ General Rules
 
 Phần này mô tả các quy định theo chuẩn RESTful, các biến và giá trị mặc định cần thiết.
 
-.. note:: Tài liệu đang trong quá trình hoàn thiện và cải tiến cho phù hợp.
-          Chúng tôi ghi nhận và nhiệt tình chào đón người có trách nhiệm đóng góp để hoàn thành.
-          Mọi phản hồi về sai sót cũng như góp ý xin liên hệ qua email của VAS Team: labs.mobiistar@gmail.com.
-          Xin chân thành cảm ơn!
+.. note:: Tài liệu đang trong quá trình hoàn thiện và chỉnh sửa cho phù hợp.
+          Những nội dung được mô tả chưa khái quát hết chức năng của ứng dụng nên cần thảo luận thêm.
+          Mọi phản hồi về sai sót cũng như góp ý xin liên hệ VAS Team: labs.mobiistar@gmail.com.
+          Chân thành cảm ơn!
           
 .. _in-rule-res-header:
 
@@ -14,7 +14,7 @@ Response header
 ---------------
 Response header phải là kiểu JSON::
 
-    {"integer":1, "boolean":true, "string":"^_^"}
+    {"integer":1, "boolean":true, "string":"^_^", "array": []}
 
 .. _in-rule-res-status:
 
