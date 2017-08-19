@@ -13,6 +13,7 @@ Get profile
 .. http:post::  /api/v1/profile/get
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
 
@@ -20,35 +21,34 @@ Get profile
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "user_id": "18963",
           "client_id": "18963"
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
-   :>json string user_id: ID định danh.
-   :>json string fullname: Họ và tên.
-   :>json string position: Vị trí.
-   :>json string deparment: Bộ phận.
-   :>json string branch: Chi nhánh.
-   :>json string dob: Ngày sinh.
-   :>json string phone: Điện thoại.
-   :>json string email: Thư điện tử.
-   :>json string avatar: Đường dẫn ảnh.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json object data: :ref:`in-rule-data-profile`.
 
    .. sourcecode:: js
 
       {
-          "status": true,
-          "user_id": "18963",
-          "fullname": "Leon Tran",
-          "position": "DEV",
-          "deparment": "VAS",
-          "branch": "HCM",
-          "dob": "1993-09-19",
-          "phone": "0961095661",
-          "email": "leon.tran@mobistar.vn",
-          "avatar": "https://cdn.mobiistar.vn/18963.png" 
+          "error_code": 0,
+          "error_message": "",
+          "data":
+          {
+             "access_code": "_HASH_",
+             "user_id": "18963",
+             "fullname": "Leon Tran",
+             "position": "DEV",
+             "deparment": "VAS",
+             "branch": "HCM",
+             "dob": 1513651191000,
+             "phone": "0961095661",
+             "email": "leon.tran@mobistar.vn",
+             "avatar": "https://cdn.mobistar.vn/18963.png"
+          }
       }
 
 
@@ -59,6 +59,7 @@ Update profile
 .. http:post::  /api/v1/profile/set
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
    :arg fullname: Họ và tên.
@@ -70,6 +71,7 @@ Update profile
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "user_id": "18963",
           "client_id": "18963",
           "fullname": "Leon Tran",
@@ -79,12 +81,14 @@ Update profile
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
 
    .. sourcecode:: js
 
       {
-          "status": true
+          "error_code": 0,
+          "error_message": ""
       }
 
 

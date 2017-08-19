@@ -1,5 +1,5 @@
 OAuth
-===============
+=====
 
 Tài liệu này mô tả cách Ứng dụng lấy Access Token Key từ WebService. Bao gồm 2 bước sau:
 
@@ -12,31 +12,37 @@ Request Token Code
 ------------------
 .. http:post::  /api/v1/oauth/request
 
-   :arg imei: IMEI của thiết bị.
-   :arg mac: Địa chỉ MAC của thiết bị.
-   :arg username: Tên người dùng.
-   :arg password: Mật khẩu.
+   :arg imei: IMEI của thiết bị (Đã mã hóa với :ref:`in-rule-secret-key`).
+   :arg mac: Địa chỉ MAC của thiết bị (Đã mã hóa với :ref:`in-rule-secret-key`).
+   :arg username: Tên người dùng (Đã mã hóa với :ref:`in-rule-secret-key`).
+   :arg password: Mật khẩu (Đã mã hóa với :ref:`in-rule-secret-key`).
+   :arg checksum: :ref:`in-rule-checksum`.
 
    .. sourcecode:: js
 
       {
-          "imei": "356938035643809", 
-          "mac": "00:0a:95:9d:68:16", 
-          "username": "leon.tran@mobistar.vn", 
-          "password": "_HASH_" 
+          "imei": "356938035643809",
+          "mac": "00:0a:95:9d:68:16",
+          "username": "leon.tran@mobistar.vn",
+          "password": "_"
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
-   :>json string token_code: Token code Server cấp phát.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json object data: :ref:`in-rule-data-access-code`.
 
    .. sourcecode:: js
 
       {
-          "status": true,
-          "token_code": "_HASH_" 
+          "error_code": 0,
+          "error_message": "",
+          "data":
+          {
+             "access_code": "_HASH_",
+             "expires_in": 30
+          }
       }
-
 
 .. _in-get-token:
 
@@ -44,27 +50,34 @@ Get Access Token Key
 --------------------
 .. http:post::  /api/v1/oauth/get
 
-   :arg token_code: Xem :ref:`in-req-token`.
+   :arg imei: IMEI của thiết bị (Đã mã hóa với :ref:`in-rule-secret-key`).
+   :arg mac: Địa chỉ MAC của thiết bị (Đã mã hóa với :ref:`in-rule-secret-key`).
+   :arg access_code: Xem :ref:`in-req-token`.
 
    .. sourcecode:: js
 
       {
+          "imei": "356938035643809",
+          "mac": "00:0a:95:9d:68:16",
           "token_code": "_HASH_"
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
-   :>json string user_id: ID định danh.
-   :>json string access_token: Access Token Key.
-   :>json string expiration: Thời gian hết hiệu lực type ("Y-m-d H:i:s").
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json object data: :ref:`in-rule-data-access-token`.
 
    .. sourcecode:: js
 
       {
-          "status": true,
-          "user_id": "18963",
-          "access_token": "_HASH_",
-          "expiration": "2027-07-17 09:00:01" 
+          "error_code": 0,
+          "error_message": "",
+          "data":
+          {
+             "user_id": "18963",
+             "access_token": "_HASH_",
+             "expiration": 1513651191000
+          }
       }
 
 
