@@ -19,6 +19,7 @@ Check-In
 .. http:post::  /api/v1/works/timekeeping/checkin
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
    :arg location: [lat,long] Kinh độ, vĩ độ thực hiện chấm công vào.
@@ -27,20 +28,23 @@ Check-In
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "user_id": "18963",
           "client_id": "18963",
           "location": [10.785092,106.6913373]
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
-   :>json string written_time: Thời gian Server ghi nhận ("Y-m-d H:i:s").
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json long written_time: Thời gian Server ghi nhận (Unix timestamp).
 
    .. sourcecode:: js
 
       {
-          "status": true,
-          "written_time": "2017-07-17 07:59:00" 
+          "error_code": 0,
+          "error_message": "",
+          "written_time": 1513651191000
       }
 
 
@@ -50,6 +54,7 @@ Check-Out
 .. http:post::  /api/v1/works/timekeeping/checkout
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
    :arg location: [lat,long] Kinh độ, vĩ độ thực hiện chấm công ra.
@@ -58,20 +63,23 @@ Check-Out
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "user_id": "18963",
           "client_id": "18963",
           "location": [10.785092,106.6913373]
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
-   :>json string written_time: Thời gian Server ghi nhận ("Y-m-d H:i:s").
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json long written_time: Thời gian Server ghi nhận (Unix timestamp).
 
    .. sourcecode:: js
 
       {
-          "status": true,
-          "written_time": "2017-07-17 17:31:00" 
+          "error_code": 0,
+          "error_message": "",
+          "written_time": 1513651191000
       }
 
 
@@ -87,6 +95,7 @@ Apply for absence
 .. http:post::  /api/v1/works/absent/apply
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
    :arg start_time: Thời gian bắt đầu.
@@ -98,6 +107,7 @@ Apply for absence
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "user_id": "18963",
           "client_id": "18963",
           "start_time": "2017-08-14 08:00",
@@ -107,12 +117,14 @@ Apply for absence
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
 
    .. sourcecode:: js
 
       {
-          "status": true
+          "error_code": 0,
+          "error_message": ""
       }
 
 
@@ -122,6 +134,7 @@ Absence approval
 .. http:post::  /api/v1/works/absent/confirm
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg absence_id: ID của đơn xin phép.
    :arg approval: Phê duyệt (Xem :ref:`in-rule-approval-mapping`).
    :arg message: Lời nhắn đến người gửi đơn.
@@ -130,18 +143,21 @@ Absence approval
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "absence_id": "19863",
           "approval": 0,
           "message": "Nghỉ luôn thì được ^_^"
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
 
    .. sourcecode:: js
 
       {
-          "status": true
+          "error_code": 0,
+          "error_message": ""
       }
 
 
@@ -151,6 +167,7 @@ Absence table
 .. http:post::  /api/v1/works/absent/table
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
 
@@ -158,27 +175,38 @@ Absence table
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "user_id": "18963",
           "client_id": "18963"
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
-   :>json array list: Danh sách các `Absence detail`_ object..
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json array data: Danh sách các `Absence detail`_ object..
 
    .. sourcecode:: js
 
       {
-          "status": true,
-          "list": [{
-          	"absence_id": "18963",
-          	"fullname": "Leon Tran",
-          	"absent_time": "2017-07-17 08:00:00 -> 2017-07-18 08:00:00",
-          	"kind": 0,
-          	"reason": "Bệnh"
+          "error_code": 0,
+          "error_message": "",
+          "data": [{
+             "access_code": "_HASH_",
+             "user_id": "18963",
+             "fullname": "Leon Tran",
+             "position": "DEV",
+             "deparment": "VAS",
+             "branch": "HCM",
+             "phone": "0961095661",
+             "email": "leon.tran@mobistar.vn",
+             "absent_time": [1513651191000, 1513651191000],
+             "kind": 0,
+             "reason": "Bệnh"
           }]
       }
 
+
+.. _in-work-absence-detail:
 
 Absence detail
 ~~~~~~~~~~~~~~
@@ -186,30 +214,41 @@ Absence detail
 .. http:post::  /api/v1/works/absent/detail
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg absence_id: ID của đơn xin phép.
 
    .. sourcecode:: js
 
       {
           "access_token": "_HASH_",
-          "absence_id": "18963",
+          "checksum": "_HASH_",
+          "absence_id": "18963"
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
-   :>json string fullname: Người nộp đơn.
-   :>json string absent_time: Thời gian nghỉ [start to end].
-   :>json integer kind: Loại phép (Xem :ref:`in-rule-kind-mapping`).
-   :>json string reason: Lý do nghỉ.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json object data: :ref:`in-rule-data-absent`.
 
    .. sourcecode:: js
 
       {
-          "status": true,
-          "fullname": "Leon Tran",
-          "absent_time": "2017-07-17 08:00:00 -> 2017-07-18 08:00:00",
-          "kind": 0,
-          "reason": "Bệnh"
+          "error_code": 0,
+          "error_message": "",
+          "data":
+          {
+             "access_code": "_HASH_",
+             "user_id": "18963",
+             "fullname": "Leon Tran",
+             "position": "DEV",
+             "deparment": "VAS",
+             "branch": "HCM",
+             "phone": "0961095661",
+             "email": "leon.tran@mobistar.vn",
+             "absent_time": [1513651191000, 1513651191000],
+             "kind": 0,
+             "reason": "Bệnh"
+          }
       }
 
 
@@ -219,6 +258,7 @@ Absence management
 .. http:post::  /api/v1/works/absent/management
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng (quản lý hoặc nhân viên).
    :arg client_id: ID client.
 
@@ -226,12 +266,14 @@ Absence management
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "user_id": "18963",
           "client_id": "18963"
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
    :>json integer remain: Số ngày phép còn lại.
    :>json integer total: Tất cả đơn đã nhận/ gửi.
    :>json integer waiting_for_approval: Số đơn chờ duyệt.
@@ -242,7 +284,8 @@ Absence management
    .. sourcecode:: js
 
       {
-          "status": true,
+          "error_code": 0,
+          "error_message": "",
           "remain": 10,
           "total": 10,
           "waiting_for_approval": 10,
@@ -264,6 +307,7 @@ Apply for OT
 .. http:post::  /api/v1/works/overtime/apply
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
    :arg start_time: Thời gian bắt đầu.
@@ -274,6 +318,7 @@ Apply for OT
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "user_id": "18963",
           "client_id": "18963",
           "start_time": "2017-08-14 08:00",
@@ -282,12 +327,14 @@ Apply for OT
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
 
    .. sourcecode:: js
 
       {
-          "status": true
+          "error_code": 0,
+          "error_message": ""
       }
 
 
@@ -297,6 +344,7 @@ Overtime approval
 .. http:post::  /api/v1/works/overtime/confirm
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg overtime_id: ID của đơn yêu cầu tăng ca.
    :arg approval: Phê duyệt (Xem :ref:`in-rule-approval-mapping`).
    :arg message: Lời nhắn đến người gửi đơn.
@@ -305,18 +353,21 @@ Overtime approval
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "overtime_id": "19863",
           "approval": 0,
           "message": "Người ta làm 5' còn em là 1 tuần là như nào?"
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
 
    .. sourcecode:: js
 
       {
-          "status": true
+          "error_code": 0,
+          "error_message": ""
       }
 
 
@@ -326,29 +377,41 @@ Overtime table
 .. http:post::  /api/v1/works/overtime/table
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
 
    .. sourcecode:: js
 
       {
-          "access_token": "_HASH_"
+          "access_token": "_HASH_",
+          "checksum": "_HASH_"
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
-   :>json array list: Danh sách các `Overtime detail`_ object..
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json array data: Danh sách các `Overtime detail`_ object..
 
    .. sourcecode:: js
 
       {
-          "status": true,
-          "list": [{
-          	"overtime_id": "18963",
-          	"fullname": "Leon Tran",
-          	"absent_time": "2017-07-17 08:00:00 -> 2017-07-18 08:00:00",
-          	"reason": "Urgent"
+          "error_code": 0,
+          "error_message": "",
+          "data": [{
+             "access_code": "_HASH_",
+             "user_id": "18963",
+             "fullname": "Leon Tran",
+             "position": "DEV",
+             "deparment": "VAS",
+             "branch": "HCM",
+             "phone": "0961095661",
+             "email": "leon.tran@mobistar.vn",
+             "absent_time": [1513651191000, 1513651191000],
+             "reason": "Urgent"
           }]
       }
 
+
+.. _in-work-overtime-detail:
 
 Overtime detail
 ~~~~~~~~~~~~~~~
@@ -356,28 +419,40 @@ Overtime detail
 .. http:post::  /api/v1/works/overtime/detail
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg overtime_id: ID của đơn yêu cầu.
 
    .. sourcecode:: js
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "overtime_id": "18963",
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
-   :>json string fullname: Người nộp đơn.
-   :>json string overtime_time: Thời gian yêu cầu tính tăng ca [start to end].
-   :>json string reason: Lý do yêu cầu.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json object data: :ref:`in-rule-data-overtime`.
 
    .. sourcecode:: js
 
       {
-          "status": true,
-          "fullname": "Leon Tran",
-          "overtime_time": "2017-07-17 08:00:00 -> 2017-07-18 08:00:00",
-          "reason": "Urgent"
+          "error_code": 0,
+          "error_message": "",
+          "data":
+          {
+             "access_code": "_HASH_",
+             "user_id": "18963",
+             "fullname": "Leon Tran",
+             "position": "DEV",
+             "deparment": "VAS",
+             "branch": "HCM",
+             "phone": "0961095661",
+             "email": "leon.tran@mobistar.vn",
+             "absent_time": [1513651191000, 1513651191000],
+             "reason": "Urgent"
+          }
       }
 
 
@@ -387,6 +462,7 @@ Overtime management
 .. http:post::  /api/v1/works/overtime/management
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng (quản lý hoặc nhân viên).
    :arg client_id: ID client.
 
@@ -394,12 +470,14 @@ Overtime management
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "user_id": "18963",
           "client_id": "18963"
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
    :>json integer total: Tất cả đơn đã nhận/ gửi.
    :>json integer waiting_for_approval: Số đơn chờ duyệt.
    :>json integer total_approval: Số đơn đã/ đã được duyệt.
@@ -409,7 +487,8 @@ Overtime management
    .. sourcecode:: js
 
       {
-          "status": true,
+          "error_code": 0,
+          "error_message": "",
           "total": 10,
           "waiting_for_approval": 10,
           "total_approval": 10,

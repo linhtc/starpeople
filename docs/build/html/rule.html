@@ -113,6 +113,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#access-code-data">Access Code Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#access-token-data">Access Token Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#profile-data">Profile Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#absent-data">Absent Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overtime-data">Overtime Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#salary-data">Salary Data</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="team.html">Read the Docs Team</a></li>
@@ -280,7 +283,7 @@ Là một biến kiểu <code class="docutils literal"><span class="pre">boolean
 <ul class="simple">
 <li><strong>user_id</strong> (<em>string</em>) - ID định danh người dùng.</li>
 <li><strong>access_token</strong> (<em>string</em>) - Access Token Key.</li>
-<li><strong>expires_time</strong> (<em>long</em>) - Thời gian hết hạn được tính theo miliseconds.</li>
+<li><strong>expires_time</strong> (<em>long</em>) - Thời gian hết hạn (Unix timestamp).</li>
 </ul>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
@@ -314,6 +317,86 @@ Là một biến kiểu <code class="docutils literal"><span class="pre">boolean
     <span class="s2">&quot;phone&quot;</span><span class="o">:</span> <span class="s2">&quot;0961095661&quot;</span><span class="p">,</span>
     <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
     <span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://cdn.mobistar.vn/18963.png&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="absent-data">
+<span id="in-rule-data-absent"></span><h2>Absent Data<a class="headerlink" href="#absent-data" title="Permalink to this headline">¶</a></h2>
+<p>Là một JSON <code class="docutils literal"><span class="pre">object</span></code> nhận được khi <a class="reference internal" href="work.html#in-work-absence-detail"><span class="std std-ref">Absence detail</span></a>. Bao gồm:</p>
+<ul class="simple">
+<li><strong>user_id</strong> (<em>string</em>) - ID định danh người dùng.</li>
+<li><strong>fullname</strong> (<em>string</em>) - Họ và tên.</li>
+<li><strong>position</strong> (<em>string</em>) - Vị trí.</li>
+<li><strong>deparment</strong> (<em>string</em>) - Bộ phận.</li>
+<li><strong>branch</strong> (<em>string</em>) - Chi nhánh.</li>
+<li><strong>phone</strong> (<em>string</em>) - Điện thoại.</li>
+<li><strong>email</strong> (<em>string</em>) - Thư điện tử.</li>
+<li><strong>absent_time</strong> (<em>arrray</em>) - Thời gian nghỉ [1513651191000, 1513651191000].</li>
+<li><strong>kind</strong> (<em>integer</em>) - Loại phép (Xem <a class="reference internal" href="#in-rule-kind-mapping"><span class="std std-ref">Kind definition</span></a>).</li>
+<li><strong>reason</strong> (<em>string</em>) - Lý do.</li>
+</ul>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;Leon Tran&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="s2">&quot;DEV&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;deparment&quot;</span><span class="o">:</span> <span class="s2">&quot;VAS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;branch&quot;</span><span class="o">:</span> <span class="s2">&quot;HCM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;phone&quot;</span><span class="o">:</span> <span class="s2">&quot;0961095661&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">1513651191000</span><span class="p">,</span> <span class="mi">1513651191000</span><span class="p">],</span>
+    <span class="s2">&quot;kind&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Sick&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="overtime-data">
+<span id="in-rule-data-overtime"></span><h2>Overtime Data<a class="headerlink" href="#overtime-data" title="Permalink to this headline">¶</a></h2>
+<p>Là một JSON <code class="docutils literal"><span class="pre">object</span></code> nhận được khi <a class="reference internal" href="work.html#in-work-overtime-detail"><span class="std std-ref">Overtime detail</span></a>. Bao gồm:</p>
+<ul class="simple">
+<li><strong>user_id</strong> (<em>string</em>) - ID định danh người dùng.</li>
+<li><strong>fullname</strong> (<em>string</em>) - Họ và tên.</li>
+<li><strong>position</strong> (<em>string</em>) - Vị trí.</li>
+<li><strong>deparment</strong> (<em>string</em>) - Bộ phận.</li>
+<li><strong>branch</strong> (<em>string</em>) - Chi nhánh.</li>
+<li><strong>phone</strong> (<em>string</em>) - Điện thoại.</li>
+<li><strong>email</strong> (<em>string</em>) - Thư điện tử.</li>
+<li><strong>absent_time</strong> (<em>arrray</em>) - Thời gian nghỉ [1513651191000, 1513651191000].</li>
+<li><strong>reason</strong> (<em>string</em>) - Lý do.</li>
+</ul>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;Leon Tran&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="s2">&quot;DEV&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;deparment&quot;</span><span class="o">:</span> <span class="s2">&quot;VAS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;branch&quot;</span><span class="o">:</span> <span class="s2">&quot;HCM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;phone&quot;</span><span class="o">:</span> <span class="s2">&quot;0961095661&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">1513651191000</span><span class="p">,</span> <span class="mi">1513651191000</span><span class="p">],</span>
+    <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Urgent&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="salary-data">
+<span id="in-rule-data-salary"></span><h2>Salary Data<a class="headerlink" href="#salary-data" title="Permalink to this headline">¶</a></h2>
+<p>Là một JSON <code class="docutils literal"><span class="pre">object</span></code> nhận được khi <a class="reference internal" href="salary.html#in-salary-get"><span class="std std-ref">Get salary</span></a>. Bao gồm:</p>
+<ul class="simple">
+<li><strong>user_id</strong> (<em>string</em>) - ID định danh người dùng.</li>
+<li><strong>fullname</strong> (<em>string</em>) - Họ và tên.</li>
+<li><strong>position</strong> (<em>string</em>) - Vị trí.</li>
+<li><strong>deparment</strong> (<em>string</em>) - Bộ phận.</li>
+<li><strong>branch</strong> (<em>string</em>) - Chi nhánh.</li>
+<li><strong>salary</strong> (<em>float</em>) - Lương thực lĩnh.</li>
+</ul>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;Leon Tran&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="s2">&quot;DEV&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;deparment&quot;</span><span class="o">:</span> <span class="s2">&quot;VAS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;branch&quot;</span><span class="o">:</span> <span class="s2">&quot;HCM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;salary&quot;</span><span class="o">:</span> <span class="mf">1234.0</span>
 <span class="p">}</span>
 </pre></div>
 </div>

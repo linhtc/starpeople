@@ -13,32 +13,37 @@ Get salary
 .. http:post::  /api/v1/salary/get
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg month: Phiếu lương tháng [1-12]
 
    .. sourcecode:: js
 
       {
-          "access_token": "_HASH_", 
+          "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "month": "1"
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
-   :>json string fullname: Họ và tên.
-   :>json string position: Vị trí.
-   :>json string deparment: Bộ phận.
-   :>json string branch: Chi nhánh.
-   :>json float salary: Lương thực lĩnh.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json object data: :ref:`in-rule-data-salary`.
 
    .. sourcecode:: js
 
       {
-          "status": true,
-          "fullname": "Leon Tran",
-          "position": "DEV",
-          "deparment": "VAS",
-          "branch": "HCM",
-          "salary": 1234.0
+          "error_code": 0,
+          "error_message": "",
+          "data":
+          {
+             "access_code": "_HASH_",
+             "user_id": "18963",
+             "fullname": "Leon Tran",
+             "position": "DEV",
+             "deparment": "VAS",
+             "branch": "HCM",
+             "salary": 1234.0
+          }
       }
 
    
@@ -51,6 +56,7 @@ Extra salary
 .. http:post::  /api/v1/salary/extra
 
    :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
    :arg deal: Mức yêu cầu cộng thêm.
    :arg reason: Lý do.
 
@@ -58,17 +64,20 @@ Extra salary
 
       {
           "access_token": "_HASH_",
+          "checksum": "_HASH_",
           "deal": "50.000",
           "reason": "Thiếu 50k nữa mới được vào Casino"
       }
 
 
-   :>json boolean status: :ref:`in-rule-res-status`.
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json integer error_message: :ref:`in-rule-error-message`.
 
    .. sourcecode:: js
 
       {
-          "status": true
+          "error_code": 0,
+          "error_message": ""
       }
 
    

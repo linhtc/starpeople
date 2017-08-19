@@ -210,6 +210,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng.</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 <li><strong>location</strong> &#8211; [lat,long] Kinh độ, vĩ độ thực hiện chấm công vào.</li>
@@ -220,6 +221,7 @@
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
     <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;location&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mf">10.785092</span><span class="p">,</span><span class="mf">106.6913373</span><span class="p">]</span>
@@ -232,16 +234,18 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
-<li><strong>written_time</strong> (<em>string</em>) &#8211; Thời gian Server ghi nhận (&#8220;Y-m-d H:i:s&#8221;).</li>
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
+<li><strong>written_time</strong> (<em>long</em>) &#8211; Thời gian Server ghi nhận (Unix timestamp).</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;written_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-07-17 07:59:00&quot;</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;written_time&quot;</span><span class="o">:</span> <span class="mi">1513651191000</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -259,6 +263,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng.</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 <li><strong>location</strong> &#8211; [lat,long] Kinh độ, vĩ độ thực hiện chấm công ra.</li>
@@ -269,6 +274,7 @@
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
     <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;location&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mf">10.785092</span><span class="p">,</span><span class="mf">106.6913373</span><span class="p">]</span>
@@ -281,16 +287,18 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
-<li><strong>written_time</strong> (<em>string</em>) &#8211; Thời gian Server ghi nhận (&#8220;Y-m-d H:i:s&#8221;).</li>
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
+<li><strong>written_time</strong> (<em>long</em>) &#8211; Thời gian Server ghi nhận (Unix timestamp).</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;written_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-07-17 17:31:00&quot;</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;written_time&quot;</span><span class="o">:</span> <span class="mi">1513651191000</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -311,6 +319,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng.</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 <li><strong>start_time</strong> &#8211; Thời gian bắt đầu.</li>
@@ -324,6 +333,7 @@
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
     <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;start_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-14 08:00&quot;</span><span class="p">,</span>
@@ -339,14 +349,16 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -364,6 +376,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 <li><strong>absence_id</strong> &#8211; ID của đơn xin phép.</li>
 <li><strong>approval</strong> &#8211; Phê duyệt (Xem <a class="reference internal" href="rule.html#in-rule-approval-mapping"><span class="std std-ref">Approval definition</span></a>).</li>
 <li><strong>message</strong> &#8211; Lời nhắn đến người gửi đơn.</li>
@@ -374,6 +387,7 @@
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
     <span class="s2">&quot;absence_id&quot;</span><span class="o">:</span> <span class="s2">&quot;19863&quot;</span><span class="p">,</span>
     <span class="s2">&quot;approval&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Nghỉ luôn thì được ^_^&quot;</span>
@@ -386,14 +400,16 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -411,6 +427,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng.</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 </ul>
@@ -420,6 +437,7 @@
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
     <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span>
 <span class="p">}</span>
@@ -431,21 +449,29 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
-<li><strong>list</strong> (<em>array</em>) &#8211; Danh sách các <a class="reference internal" href="#absence-detail">Absence detail</a> object..</li>
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
+<li><strong>data</strong> (<em>array</em>) &#8211; Danh sách các <a class="reference internal" href="#absence-detail">Absence detail</a> object..</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;list&quot;</span><span class="o">:</span> <span class="p">[{</span>
-          <span class="s2">&quot;absence_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;Leon Tran&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-07-17 08:00:00 -&gt; 2017-07-18 08:00:00&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;kind&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-          <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Bệnh&quot;</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">[{</span>
+       <span class="s2">&quot;access_code&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;Leon Tran&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="s2">&quot;DEV&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;deparment&quot;</span><span class="o">:</span> <span class="s2">&quot;VAS&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;branch&quot;</span><span class="o">:</span> <span class="s2">&quot;HCM&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;phone&quot;</span><span class="o">:</span> <span class="s2">&quot;0961095661&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">1513651191000</span><span class="p">,</span> <span class="mi">1513651191000</span><span class="p">],</span>
+       <span class="s2">&quot;kind&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+       <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Bệnh&quot;</span>
     <span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
@@ -454,7 +480,7 @@
 
 </div>
 <div class="section" id="absence-detail">
-<h3>Absence detail<a class="headerlink" href="#absence-detail" title="Permalink to this headline">¶</a></h3>
+<span id="in-work-absence-detail"></span><h3>Absence detail<a class="headerlink" href="#absence-detail" title="Permalink to this headline">¶</a></h3>
 <dl class="post">
 <dt id="post--api-v1-works-absent-detail">
 <code class="descname">POST </code><code class="descname">/api/v1/works/absent/detail</code><a class="headerlink" href="#post--api-v1-works-absent-detail" title="Permalink to this definition">¶</a></dt>
@@ -464,6 +490,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 <li><strong>absence_id</strong> &#8211; ID của đơn xin phép.</li>
 </ul>
 </td>
@@ -472,7 +499,8 @@
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;absence_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;absence_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -482,22 +510,31 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
-<li><strong>fullname</strong> (<em>string</em>) &#8211; Người nộp đơn.</li>
-<li><strong>absent_time</strong> (<em>string</em>) &#8211; Thời gian nghỉ [start to end].</li>
-<li><strong>kind</strong> (<em>integer</em>) &#8211; Loại phép (Xem <a class="reference internal" href="rule.html#in-rule-kind-mapping"><span class="std std-ref">Kind definition</span></a>).</li>
-<li><strong>reason</strong> (<em>string</em>) &#8211; Lý do nghỉ.</li>
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
+<li><strong>data</strong> (<em>object</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-data-absent"><span class="std std-ref">Absent Data</span></a>.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;Leon Tran&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-07-17 08:00:00 -&gt; 2017-07-18 08:00:00&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;kind&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Bệnh&quot;</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data&quot;</span><span class="o">:</span>
+    <span class="p">{</span>
+       <span class="s2">&quot;access_code&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;Leon Tran&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="s2">&quot;DEV&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;deparment&quot;</span><span class="o">:</span> <span class="s2">&quot;VAS&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;branch&quot;</span><span class="o">:</span> <span class="s2">&quot;HCM&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;phone&quot;</span><span class="o">:</span> <span class="s2">&quot;0961095661&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">1513651191000</span><span class="p">,</span> <span class="mi">1513651191000</span><span class="p">],</span>
+       <span class="s2">&quot;kind&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+       <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Bệnh&quot;</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -515,6 +552,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng (quản lý hoặc nhân viên).</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 </ul>
@@ -524,6 +562,7 @@
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
     <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span>
 <span class="p">}</span>
@@ -535,7 +574,8 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
 <li><strong>remain</strong> (<em>integer</em>) &#8211; Số ngày phép còn lại.</li>
 <li><strong>total</strong> (<em>integer</em>) &#8211; Tất cả đơn đã nhận/ gửi.</li>
 <li><strong>waiting_for_approval</strong> (<em>integer</em>) &#8211; Số đơn chờ duyệt.</li>
@@ -548,7 +588,8 @@
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;remain&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
     <span class="s2">&quot;total&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
     <span class="s2">&quot;waiting_for_approval&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
@@ -575,6 +616,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng.</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 <li><strong>start_time</strong> &#8211; Thời gian bắt đầu.</li>
@@ -587,6 +629,7 @@
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
     <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;start_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-14 08:00&quot;</span><span class="p">,</span>
@@ -601,14 +644,16 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -626,6 +671,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 <li><strong>overtime_id</strong> &#8211; ID của đơn yêu cầu tăng ca.</li>
 <li><strong>approval</strong> &#8211; Phê duyệt (Xem <a class="reference internal" href="rule.html#in-rule-approval-mapping"><span class="std std-ref">Approval definition</span></a>).</li>
 <li><strong>message</strong> &#8211; Lời nhắn đến người gửi đơn.</li>
@@ -636,6 +682,7 @@
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
     <span class="s2">&quot;overtime_id&quot;</span><span class="o">:</span> <span class="s2">&quot;19863&quot;</span><span class="p">,</span>
     <span class="s2">&quot;approval&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Người ta làm 5&#39; còn em là 1 tuần là như nào?&quot;</span>
@@ -648,14 +695,16 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -673,13 +722,15 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -689,20 +740,28 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
-<li><strong>list</strong> (<em>array</em>) &#8211; Danh sách các <a class="reference internal" href="#overtime-detail">Overtime detail</a> object..</li>
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
+<li><strong>data</strong> (<em>array</em>) &#8211; Danh sách các <a class="reference internal" href="#overtime-detail">Overtime detail</a> object..</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;list&quot;</span><span class="o">:</span> <span class="p">[{</span>
-          <span class="s2">&quot;overtime_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;Leon Tran&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-07-17 08:00:00 -&gt; 2017-07-18 08:00:00&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Urgent&quot;</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">[{</span>
+       <span class="s2">&quot;access_code&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;Leon Tran&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="s2">&quot;DEV&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;deparment&quot;</span><span class="o">:</span> <span class="s2">&quot;VAS&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;branch&quot;</span><span class="o">:</span> <span class="s2">&quot;HCM&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;phone&quot;</span><span class="o">:</span> <span class="s2">&quot;0961095661&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">1513651191000</span><span class="p">,</span> <span class="mi">1513651191000</span><span class="p">],</span>
+       <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Urgent&quot;</span>
     <span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
@@ -711,7 +770,7 @@
 
 </div>
 <div class="section" id="overtime-detail">
-<h3>Overtime detail<a class="headerlink" href="#overtime-detail" title="Permalink to this headline">¶</a></h3>
+<span id="in-work-overtime-detail"></span><h3>Overtime detail<a class="headerlink" href="#overtime-detail" title="Permalink to this headline">¶</a></h3>
 <dl class="post">
 <dt id="post--api-v1-works-overtime-detail">
 <code class="descname">POST </code><code class="descname">/api/v1/works/overtime/detail</code><a class="headerlink" href="#post--api-v1-works-overtime-detail" title="Permalink to this definition">¶</a></dt>
@@ -721,6 +780,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 <li><strong>overtime_id</strong> &#8211; ID của đơn yêu cầu.</li>
 </ul>
 </td>
@@ -729,6 +789,7 @@
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
     <span class="s2">&quot;overtime_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
@@ -739,20 +800,30 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
-<li><strong>fullname</strong> (<em>string</em>) &#8211; Người nộp đơn.</li>
-<li><strong>overtime_time</strong> (<em>string</em>) &#8211; Thời gian yêu cầu tính tăng ca [start to end].</li>
-<li><strong>reason</strong> (<em>string</em>) &#8211; Lý do yêu cầu.</li>
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
+<li><strong>data</strong> (<em>object</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-data-overtime"><span class="std std-ref">Overtime Data</span></a>.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;Leon Tran&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;overtime_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-07-17 08:00:00 -&gt; 2017-07-18 08:00:00&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Urgent&quot;</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data&quot;</span><span class="o">:</span>
+    <span class="p">{</span>
+       <span class="s2">&quot;access_code&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;fullname&quot;</span><span class="o">:</span> <span class="s2">&quot;Leon Tran&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="s2">&quot;DEV&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;deparment&quot;</span><span class="o">:</span> <span class="s2">&quot;VAS&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;branch&quot;</span><span class="o">:</span> <span class="s2">&quot;HCM&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;phone&quot;</span><span class="o">:</span> <span class="s2">&quot;0961095661&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">1513651191000</span><span class="p">,</span> <span class="mi">1513651191000</span><span class="p">],</span>
+       <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Urgent&quot;</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -770,6 +841,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng (quản lý hoặc nhân viên).</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
 </ul>
@@ -779,6 +851,7 @@
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
     <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
     <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span>
 <span class="p">}</span>
@@ -790,7 +863,8 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>boolean</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-res-status"><span class="std std-ref">Response status</span></a>.</li>
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
 <li><strong>total</strong> (<em>integer</em>) &#8211; Tất cả đơn đã nhận/ gửi.</li>
 <li><strong>waiting_for_approval</strong> (<em>integer</em>) &#8211; Số đơn chờ duyệt.</li>
 <li><strong>total_approval</strong> (<em>integer</em>) &#8211; Số đơn đã/ đã được duyệt.</li>
@@ -802,7 +876,8 @@
 </tbody>
 </table>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;total&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
     <span class="s2">&quot;waiting_for_approval&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
     <span class="s2">&quot;total_approval&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>

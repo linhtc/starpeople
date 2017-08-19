@@ -119,7 +119,7 @@ Là một JSON ``object`` nhận được khi :ref:`in-get-token`. Bao gồm:
 
 * **user_id** (*string*) - ID định danh người dùng.
 * **access_token** (*string*) - Access Token Key.
-* **expires_time** (*long*) - Thời gian hết hạn được tính theo miliseconds.
+* **expires_time** (*long*) - Thời gian hết hạn (Unix timestamp).
 
 .. sourcecode:: js
 
@@ -158,6 +158,95 @@ Là một JSON ``object`` nhận được khi :ref:`in-profile-get`. Bao gồm:
           "phone": "0961095661",
           "email": "leon.tran@mobistar.vn",
           "avatar": "https://cdn.mobistar.vn/18963.png"
+      }
+
+
+.. _in-rule-data-absent:
+
+Absent Data
+-----------
+Là một JSON ``object`` nhận được khi :ref:`in-work-absence-detail`. Bao gồm:
+
+* **user_id** (*string*) - ID định danh người dùng.
+* **fullname** (*string*) - Họ và tên.
+* **position** (*string*) - Vị trí.
+* **deparment** (*string*) - Bộ phận.
+* **branch** (*string*) - Chi nhánh.
+* **phone** (*string*) - Điện thoại.
+* **email** (*string*) - Thư điện tử.
+* **absent_time** (*arrray*) - Thời gian nghỉ [1513651191000, 1513651191000].
+* **kind** (*integer*) - Loại phép (Xem :ref:`in-rule-kind-mapping`).
+* **reason** (*string*) - Lý do.
+
+.. sourcecode:: js
+
+      {
+          "user_id": "18963",
+          "fullname": "Leon Tran",
+          "position": "DEV",
+          "deparment": "VAS",
+          "branch": "HCM",
+          "phone": "0961095661",
+          "email": "leon.tran@mobistar.vn",
+          "absent_time": [1513651191000, 1513651191000],
+          "kind": 0,
+          "reason": "Sick"
+      }
+
+
+.. _in-rule-data-overtime:
+
+Overtime Data
+-------------
+Là một JSON ``object`` nhận được khi :ref:`in-work-overtime-detail`. Bao gồm:
+
+* **user_id** (*string*) - ID định danh người dùng.
+* **fullname** (*string*) - Họ và tên.
+* **position** (*string*) - Vị trí.
+* **deparment** (*string*) - Bộ phận.
+* **branch** (*string*) - Chi nhánh.
+* **phone** (*string*) - Điện thoại.
+* **email** (*string*) - Thư điện tử.
+* **absent_time** (*arrray*) - Thời gian nghỉ [1513651191000, 1513651191000].
+* **reason** (*string*) - Lý do.
+
+.. sourcecode:: js
+
+      {
+          "user_id": "18963",
+          "fullname": "Leon Tran",
+          "position": "DEV",
+          "deparment": "VAS",
+          "branch": "HCM",
+          "phone": "0961095661",
+          "email": "leon.tran@mobistar.vn",
+          "absent_time": [1513651191000, 1513651191000],
+          "reason": "Urgent"
+      }
+
+
+.. _in-rule-data-salary:
+
+Salary Data
+-------------
+Là một JSON ``object`` nhận được khi :ref:`in-salary-get`. Bao gồm:
+
+* **user_id** (*string*) - ID định danh người dùng.
+* **fullname** (*string*) - Họ và tên.
+* **position** (*string*) - Vị trí.
+* **deparment** (*string*) - Bộ phận.
+* **branch** (*string*) - Chi nhánh.
+* **salary** (*float*) - Lương thực lĩnh.
+
+.. sourcecode:: js
+
+      {
+          "user_id": "18963",
+          "fullname": "Leon Tran",
+          "position": "DEV",
+          "deparment": "VAS",
+          "branch": "HCM",
+          "salary": 1234.0
       }
 
 
