@@ -36,7 +36,7 @@ Check-In
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
    :>json long written_time: Thời gian Server ghi nhận (Unix timestamp).
 
    .. sourcecode:: js
@@ -71,7 +71,7 @@ Check-Out
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
    :>json long written_time: Thời gian Server ghi nhận (Unix timestamp).
 
    .. sourcecode:: js
@@ -118,7 +118,7 @@ Apply for absence
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
 
    .. sourcecode:: js
 
@@ -151,7 +151,7 @@ Absence approval
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
 
    .. sourcecode:: js
 
@@ -182,7 +182,7 @@ Absence table
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
    :>json array data: Danh sách các `Absence detail`_ object..
 
    .. sourcecode:: js
@@ -227,7 +227,7 @@ Absence detail
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
    :>json object data: :ref:`in-rule-data-absent`.
 
    .. sourcecode:: js
@@ -273,7 +273,7 @@ Absence management
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
    :>json integer remain: Số ngày phép còn lại.
    :>json integer total: Tất cả đơn đã nhận/ gửi.
    :>json integer waiting_for_approval: Số đơn chờ duyệt.
@@ -328,7 +328,7 @@ Apply for OT
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
 
    .. sourcecode:: js
 
@@ -361,7 +361,7 @@ Overtime approval
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
 
    .. sourcecode:: js
 
@@ -388,7 +388,7 @@ Overtime table
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
    :>json array data: Danh sách các `Overtime detail`_ object..
 
    .. sourcecode:: js
@@ -432,7 +432,7 @@ Overtime detail
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
    :>json object data: :ref:`in-rule-data-overtime`.
 
    .. sourcecode:: js
@@ -477,7 +477,7 @@ Overtime management
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
    :>json integer total: Tất cả đơn đã nhận/ gửi.
    :>json integer waiting_for_approval: Số đơn chờ duyệt.
    :>json integer total_approval: Số đơn đã/ đã được duyệt.

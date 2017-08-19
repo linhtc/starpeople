@@ -29,7 +29,7 @@ Request Token Code
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
    :>json object data: :ref:`in-rule-data-access-code`.
 
    .. sourcecode:: js
@@ -64,7 +64,7 @@ Get Access Token Key
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
    :>json object data: :ref:`in-rule-data-access-token`.
 
    .. sourcecode:: js

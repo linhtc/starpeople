@@ -28,7 +28,7 @@ Get profile
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
    :>json object data: :ref:`in-rule-data-profile`.
 
    .. sourcecode:: js
@@ -82,7 +82,7 @@ Update profile
 
 
    :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json integer error_message: :ref:`in-rule-error-message`.
+   :>json string error_message: :ref:`in-rule-error-message`.
 
    .. sourcecode:: js
 
