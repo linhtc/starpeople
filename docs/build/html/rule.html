@@ -247,7 +247,7 @@ Là một biến kiểu <code class="docutils literal"><span class="pre">boolean
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">checksum</span> <span class="p">(</span> <span class="nx">hash_256</span> <span class="p">[</span><span class="nx">all_post_data</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Trong đó imei, mac, username, password đã được mã hóa với key (<a class="reference internal" href="#in-rule-secret-key"><span class="std std-ref">Secret Key</span></a>).</p>
+<p>Trong đó all_post_data bao gồm access_token + [user_id] + [client_id] + ... + key (<a class="reference internal" href="#in-rule-secret-key"><span class="std std-ref">Secret Key</span></a>).</p>
 </div>
 <div class="section" id="error-code">
 <span id="in-rule-error-code"></span><h2>Error Code<a class="headerlink" href="#error-code" title="Permalink to this headline">¶</a></h2>

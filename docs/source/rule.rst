@@ -75,7 +75,7 @@ Theo cách sau:
 
     checksum ( hash_256 [all_post_data])
 
-Trong đó imei, mac, username, password đã được mã hóa với key (:ref:`in-rule-secret-key`).
+Trong đó all_post_data bao gồm access_token + [user_id] + [client_id] + ... + key (:ref:`in-rule-secret-key`).
 
 .. _in-rule-error-code:
 
