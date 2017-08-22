@@ -244,7 +244,7 @@ Là một biến kiểu <code class="docutils literal"><span class="pre">boolean
 <div class="section" id="check-sum">
 <span id="in-rule-checksum"></span><h2>Check Sum<a class="headerlink" href="#check-sum" title="Permalink to this headline">¶</a></h2>
 <p>Theo cách sau:</p>
-<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">checksum</span> <span class="p">(</span> <span class="nx">hash_256</span> <span class="p">[</span><span class="nx">imei</span><span class="p">,</span> <span class="nx">mac</span><span class="p">,</span> <span class="nx">username</span><span class="p">,</span> <span class="nx">password</span><span class="p">],</span> <span class="nx">key</span><span class="p">)</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">checksum</span> <span class="p">(</span> <span class="nx">hash_256</span> <span class="p">[</span><span class="nx">all_post_data</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Trong đó imei, mac, username, password đã được mã hóa với key (<a class="reference internal" href="#in-rule-secret-key"><span class="std std-ref">Secret Key</span></a>).</p>

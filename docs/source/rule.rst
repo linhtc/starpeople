@@ -73,7 +73,7 @@ Theo cách sau:
 
 .. code-block:: js
 
-    checksum ( hash_256 [imei, mac, username, password], key)
+    checksum ( hash_256 [all_post_data])
 
 Trong đó imei, mac, username, password đã được mã hóa với key (:ref:`in-rule-secret-key`).
 
