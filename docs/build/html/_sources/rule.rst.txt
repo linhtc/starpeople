@@ -63,7 +63,7 @@ Là một biến kiểu ``integer`` xác định trạng thái duyệt đơn ngh
 
 Secret Key
 ----------
-Là mã bảo được dùng để mã hóa và giải mã giữa client/server.
+Là mã bảo mật được dùng để mã hóa và giải mã giữa client/server. VAS Team sẽ cung cấp sau.
 
 .. _in-rule-checksum:
 
