@@ -59,7 +59,7 @@ Get Access Token Key
       {
           "imei": "356938035643809",
           "mac": "00:0a:95:9d:68:16",
-          "token_code": "_HASH_"
+          "access_code": "_HASH_"
       }
 
 
