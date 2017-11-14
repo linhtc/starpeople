@@ -44,6 +44,9 @@ Get profile
              "position": "DEV",
              "deparment": "VAS",
              "branch": "HCM",
+             "position_name": "Nhóm phát triển",
+             "deparment_name": "Phòng Dịch vụ gia tăng",
+             "branch_name": "Chi nhánh Hồ Chí Minh",
              "dob": 1513651191000,
              "phone": "0961095661",
              "email": "leon.tran@mobistar.vn",
@@ -63,8 +66,6 @@ Update profile
    :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
-   :arg fullname: Họ và tên.
-   :arg email: Email.
    :arg phone: Điện thoại.
    :arg address: Địa chỉ.
 
@@ -75,8 +76,6 @@ Update profile
           "checksum": "_HASH_",
           "user_id": "18963",
           "client_id": "18963",
-          "fullname": "Leon Tran",
-          "email": "leon.tran@mobistar.vn",
           "phone": "0961095661",
           "address": "Saigon Vietnam"
       }

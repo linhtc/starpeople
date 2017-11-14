@@ -138,9 +138,12 @@ Là một JSON ``object`` nhận được khi :ref:`in-profile-get`. Bao gồm:
 
 * **user_id** (*string*) - ID định danh người dùng.
 * **fullname** (*string*) - Họ và tên.
-* **position** (*string*) - Vị trí.
-* **deparment** (*string*) - Bộ phận.
-* **branch** (*string*) - Chi nhánh.
+* **position** (*string*) - Mã Vị trí.
+* **deparment** (*string*) - Mã Bộ phận.
+* **branch** (*string*) - Mã Chi nhánh.
+* **position_name** (*string*) - Vị trí.
+* **deparment_name** (*string*) - Bộ phận.
+* **branch_name** (*string*) - Chi nhánh.
 * **dob** (*long*) - Ngày sinh.
 * **phone** (*string*) - Điện thoại.
 * **email** (*string*) - Thư điện tử.
@@ -155,6 +158,9 @@ Là một JSON ``object`` nhận được khi :ref:`in-profile-get`. Bao gồm:
           "position": "DEV",
           "deparment": "VAS",
           "branch": "HCM",
+          "position_name": "Nhóm phát triển",
+          "deparment_name": "Phòng Dịch vụ gia tăng",
+          "branch_name": "Chi nhánh Hồ Chí Minh",
           "dob": 1513651191000,
           "phone": "0961095661",
           "email": "leon.tran@mobistar.vn",
