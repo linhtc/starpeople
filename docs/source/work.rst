@@ -405,7 +405,7 @@ Overtime table
              "branch": "HCM",
              "phone": "0961095661",
              "email": "leon.tran@mobistar.vn",
-             "absent_time": [1513651191000, 1513651191000],
+             "overtime_time": [1513651191000, 1513651191000],
              "reason": "Urgent"
           }]
       }
