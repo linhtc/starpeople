@@ -118,7 +118,7 @@ Get permission
 
    :>json integer error_code: :ref:`in-rule-error-code`.
    :>json string error_message: :ref:`in-rule-error-message`.
-   :>json object data: :ref:`in-rule-data-profile`.
+   :>json object data: Các tính năng được phép.
 
    .. sourcecode:: js
 
