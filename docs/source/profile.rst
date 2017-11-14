@@ -5,6 +5,7 @@ Tài liệu này mô tả cách sử dụng thông tin người dùng từ WebSe
 
 * :ref:`in-profile-get`
 * :ref:`in-profile-update`
+* :ref:`in-profile-permission`
 
 .. _in-profile-get:
 
@@ -89,6 +90,48 @@ Update profile
       {
           "error_code": 0,
           "error_message": ""
+      }
+
+
+
+
+.. _in-profile-permission:
+
+Get permission
+--------------
+.. http:post::  /api/v1/profile/permission
+
+   :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
+
+   .. sourcecode:: js
+
+      {
+          "access_token": "_HASH_",
+          "checksum": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963"
+      }
+
+
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json string error_message: :ref:`in-rule-error-message`.
+   :>json object data: :ref:`in-rule-data-profile`.
+
+   .. sourcecode:: js
+
+      {
+          "error_code": 0,
+          "error_message": "",
+          "data":
+          {
+             "profile": {"get":1, "update":1},
+             "absence": {"apply":1, "confirm":0, "apply":1, "table":1, "management":1},
+             "overtime": {"apply":1, "confirm":0, "apply":1, "table":1, "management":1},
+             "salary": {"get":1}
+          }
       }
 
 

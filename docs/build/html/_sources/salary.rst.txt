@@ -4,7 +4,6 @@ Salary Information
 Tài liệu này mô tả cách xem thông tin lương từ WebService. Bao gồm các phần sau:
 
 * :ref:`in-salary-get`
-* :ref:`in-salary-extra`
 
 .. _in-salary-get:
 
@@ -48,36 +47,3 @@ Get salary
 
    
 
-
-.. _in-salary-extra:
-
-Extra salary
---------------------
-.. http:post::  /api/v1/salary/extra
-
-   :arg access_token: Xem :ref:`in-get-token`.
-   :arg checksum: :ref:`in-rule-checksum`.
-   :arg deal: Mức yêu cầu cộng thêm.
-   :arg reason: Lý do.
-
-   .. sourcecode:: js
-
-      {
-          "access_token": "_HASH_",
-          "checksum": "_HASH_",
-          "deal": "50.000",
-          "reason": "Thiếu 50k nữa mới được vào Casino"
-      }
-
-
-   :>json integer error_code: :ref:`in-rule-error-code`.
-   :>json string error_message: :ref:`in-rule-error-message`.
-
-   .. sourcecode:: js
-
-      {
-          "error_code": 0,
-          "error_message": ""
-      }
-
-   

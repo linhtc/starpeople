@@ -4,7 +4,6 @@ Salary Information
 Tài liệu này mô tả cách xem thông tin lương từ WebService. Bao gồm các phần sau:
 
 * :ref:`in-salary-get`
-* :ref:`in-salary-extra`
 
 .. _in-salary-get:
 
