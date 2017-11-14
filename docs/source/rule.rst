@@ -185,6 +185,7 @@ Là một JSON ``object`` nhận được khi :ref:`in-work-absence-detail`. Bao
 * **absent_time** (*arrray*) - Thời gian nghỉ [1513651191000, 1513651191000].
 * **kind** (*integer*) - Loại phép (Xem :ref:`in-rule-kind-mapping`).
 * **reason** (*string*) - Lý do.
+* **status** (*integer*) - Trạng thái đơn (-1 đang chờ, 0 không cho phép, 1 đồng ý).
 
 .. sourcecode:: js
 
@@ -198,7 +199,8 @@ Là một JSON ``object`` nhận được khi :ref:`in-work-absence-detail`. Bao
           "email": "leon.tran@mobistar.vn",
           "absent_time": [1513651191000, 1513651191000],
           "kind": 0,
-          "reason": "Sick"
+          "reason": "Sick",
+          "status": -1
       }
 
 
@@ -217,6 +219,7 @@ Là một JSON ``object`` nhận được khi :ref:`in-work-overtime-detail`. Ba
 * **email** (*string*) - Thư điện tử.
 * **absent_time** (*arrray*) - Thời gian nghỉ [1513651191000, 1513651191000].
 * **reason** (*string*) - Lý do.
+* **status** (*integer*) - Trạng thái đơn (-1 đang chờ, 0 không cho phép, 1 đồng ý).
 
 .. sourcecode:: js
 
@@ -229,7 +232,8 @@ Là một JSON ``object`` nhận được khi :ref:`in-work-overtime-detail`. Ba
           "phone": "0961095661",
           "email": "leon.tran@mobistar.vn",
           "absent_time": [1513651191000, 1513651191000],
-          "reason": "Urgent"
+          "reason": "Urgent",
+          "status": -1
       }
 
 

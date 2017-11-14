@@ -201,7 +201,8 @@ Absence table
              "email": "leon.tran@mobistar.vn",
              "absent_time": [1513651191000, 1513651191000],
              "kind": 0,
-             "reason": "Bệnh"
+             "reason": "Bệnh",
+             "status": 0
           }]
       }
 
@@ -247,7 +248,8 @@ Absence detail
              "email": "leon.tran@mobistar.vn",
              "absent_time": [1513651191000, 1513651191000],
              "kind": 0,
-             "reason": "Bệnh"
+             "reason": "Bệnh",
+             "status": 0
           }
       }
 
@@ -406,7 +408,8 @@ Overtime table
              "phone": "0961095661",
              "email": "leon.tran@mobistar.vn",
              "overtime_time": [1513651191000, 1513651191000],
-             "reason": "Urgent"
+             "reason": "Urgent",
+             "status": 0
           }]
       }
 
@@ -451,7 +454,8 @@ Overtime detail
              "phone": "0961095661",
              "email": "leon.tran@mobistar.vn",
              "absent_time": [1513651191000, 1513651191000],
-             "reason": "Urgent"
+             "reason": "Urgent",
+             "status": 0
           }
       }
 
