@@ -191,7 +191,7 @@ Absence table
           "error_code": 0,
           "error_message": "",
           "data": [{
-             "access_code": "_HASH_",
+             "absence_id": "19863",
              "user_id": "18963",
              "fullname": "Leon Tran",
              "position": "DEV",
@@ -237,7 +237,7 @@ Absence detail
           "error_message": "",
           "data":
           {
-             "access_code": "_HASH_",
+             "absence_id": "19863",
              "user_id": "18963",
              "fullname": "Leon Tran",
              "position": "DEV",
@@ -397,7 +397,7 @@ Overtime table
           "error_code": 0,
           "error_message": "",
           "data": [{
-             "access_code": "_HASH_",
+             "absence_id": "19863",
              "user_id": "18963",
              "fullname": "Leon Tran",
              "position": "DEV",
@@ -442,7 +442,7 @@ Overtime detail
           "error_message": "",
           "data":
           {
-             "access_code": "_HASH_",
+             "absence_id": "19863",
              "user_id": "18963",
              "fullname": "Leon Tran",
              "position": "DEV",
