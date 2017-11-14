@@ -397,7 +397,7 @@ Overtime table
           "error_code": 0,
           "error_message": "",
           "data": [{
-             "absence_id": "19863",
+             "overtime_id": "19863",
              "user_id": "18963",
              "fullname": "Leon Tran",
              "position": "DEV",
@@ -442,7 +442,7 @@ Overtime detail
           "error_message": "",
           "data":
           {
-             "absence_id": "19863",
+             "overtime_id": "19863",
              "user_id": "18963",
              "fullname": "Leon Tran",
              "position": "DEV",
