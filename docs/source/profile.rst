@@ -47,6 +47,7 @@ Get profile
              "dob": 1513651191000,
              "phone": "0961095661",
              "email": "leon.tran@mobistar.vn",
+             "address": "Saigon Vietnam",
              "avatar": "https://cdn.mobistar.vn/18963.png"
           }
       }

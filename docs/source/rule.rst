@@ -144,6 +144,7 @@ Là một JSON ``object`` nhận được khi :ref:`in-profile-get`. Bao gồm:
 * **dob** (*long*) - Ngày sinh.
 * **phone** (*string*) - Điện thoại.
 * **email** (*string*) - Thư điện tử.
+* **address** (*string*) - Địa chỉ.
 * **avatar** (*string*) - Đường dẫn ảnh.
 
 .. sourcecode:: js
@@ -157,6 +158,7 @@ Là một JSON ``object`` nhận được khi :ref:`in-profile-get`. Bao gồm:
           "dob": 1513651191000,
           "phone": "0961095661",
           "email": "leon.tran@mobistar.vn",
+          "address": "Saigon Vietnam",
           "avatar": "https://cdn.mobistar.vn/18963.png"
       }
 
