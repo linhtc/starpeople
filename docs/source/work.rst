@@ -161,7 +161,7 @@ Absence approval
       }
 
 
-.. note:: API này vừa được chỉnh sửa lúc 14:30 ngày 14/11/2017.
+.. note:: API bên dưới vừa được chỉnh sửa lúc 14:30 ngày 14/11/2017.
           Bao gồm 2 key ở phần response là absence_id và status.
 
 Absence table
@@ -376,7 +376,7 @@ Overtime approval
       }
 
 
-.. note:: API này vừa được chỉnh sửa lúc 14:30 ngày 14/11/2017.
+.. note:: API bên dưới vừa được chỉnh sửa lúc 14:30 ngày 14/11/2017.
           Bao gồm 2 key ở phần response là overtime_id và status.
 
 Overtime table
