@@ -49,15 +49,17 @@ Là một biến kiểu ``integer`` xác định loại phép.
 * 1 - Nghỉ thai sản.
 * 2 - Nghỉ phép không lương.
 
-.. _in-rule-approval-mapping:
+.. _in-rule-approval-status-mapping:
 
-Approval definition
--------------------
-Là một biến kiểu ``integer`` xác định trạng thái duyệt đơn nghỉ phép, tăng ca.
+Approval status definition
+--------------------------
+Là một biến kiểu ``integer`` xác định trạng thái của đơn xin nghỉ phép/tăng ca.
 
-* 0 - Không duyệt.
-* 1 - Đồng ý.
-* 2 - Yêu cầu chỉnh sửa.
+* -1 - N/A.
+* 0 - Chờ duyệt duyệt.
+* 1 - Đã duyệt.
+* 2 - Không duyệt.
+* 3 - Yêu cầu chỉnh sửa.
 
 .. _in-rule-secret-key:
 
@@ -169,6 +171,28 @@ Là một JSON ``object`` nhận được khi :ref:`in-profile-get`. Bao gồm:
       }
 
 
+.. _in-rule-shift-profile:
+
+Shift Data
+----------
+Là một JSON ``object`` nhận được khi xem :ref:`in-work-timekeeping-history`. Trong đó:
+
+* **date** (*date*) - Ngày công.
+* **in** (*object*) - Chấm công bắt đầu làm việc.
+* **out** (*object*) - Chấm công kết thúc ca/ngày làm việc.
+* **written_time** (*integer*) - Thời gian thực hiện chấm công.
+* **location** (*array*) - Vị trí thực hiện chấm công.
+
+.. sourcecode:: js
+
+      {
+         "date": {
+         	"in": {"writen_time": integer, "location": [lat, long]},
+         	"out": {"writen_time": integer, "location": [lat, long]}
+         }
+      }
+
+
 .. _in-rule-data-absent:
 
 Absent Data
@@ -182,10 +206,10 @@ Là một JSON ``object`` nhận được khi :ref:`in-work-absence-detail`. Bao
 * **branch** (*string*) - Chi nhánh.
 * **phone** (*string*) - Điện thoại.
 * **email** (*string*) - Thư điện tử.
-* **absent_time** (*arrray*) - Thời gian nghỉ [1513651191000, 1513651191000].
+* **absent_time** (*array*) - Thời gian nghỉ [1513651191000, 1513651191000].
 * **kind** (*integer*) - Loại phép (Xem :ref:`in-rule-kind-mapping`).
 * **reason** (*string*) - Lý do.
-* **status** (*integer*) - Trạng thái đơn (-1 đang chờ, 0 không cho phép, 1 đồng ý).
+* **status** (*integer*) - Trạng thái đơn (Xem :ref:`in-rule-approval-status-mapping`).
 
 .. sourcecode:: js
 
@@ -217,9 +241,9 @@ Là một JSON ``object`` nhận được khi :ref:`in-work-overtime-detail`. Ba
 * **branch** (*string*) - Chi nhánh.
 * **phone** (*string*) - Điện thoại.
 * **email** (*string*) - Thư điện tử.
-* **absent_time** (*arrray*) - Thời gian nghỉ [1513651191000, 1513651191000].
+* **absent_time** (*array*) - Thời gian nghỉ [1513651191000, 1513651191000].
 * **reason** (*string*) - Lý do.
-* **status** (*integer*) - Trạng thái đơn (-1 đang chờ, 0 không cho phép, 1 đồng ý).
+* **status** (*integer*) - Trạng thái đơn (Xem :ref:`in-rule-approval-status-mapping`).
 
 .. sourcecode:: js
 

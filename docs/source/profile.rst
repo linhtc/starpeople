@@ -94,7 +94,6 @@ Update profile
 
 
 
-
 .. _in-profile-permission:
 
 Get permission
@@ -131,6 +130,45 @@ Get permission
              "absence": {"apply":1, "confirm":0, "apply":1, "table":1, "management":1},
              "overtime": {"apply":1, "confirm":0, "apply":1, "table":1, "management":1},
              "salary": {"get":1}
+          }
+      }
+
+
+
+.. _in-profile-shift:
+
+Get shift
+--------------
+.. http:post::  /api/v1/profile/shift
+
+   :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
+
+   .. sourcecode:: js
+
+      {
+          "access_token": "_HASH_",
+          "checksum": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963"
+      }
+
+
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json string error_message: :ref:`in-rule-error-message`.
+   :>json object data: Những ca làm việc của nhân viên này.
+
+   .. sourcecode:: js
+
+      {
+          "error_code": 0,
+          "error_message": "",
+          "data":
+          {
+             "day":[8:00, 17:30],
+             "night":[18:00, 22:00]
           }
       }
 

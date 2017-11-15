@@ -105,7 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#response-header">Response header</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#response-status">Response status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#kind-definition">Kind definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#approval-definition">Approval definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#approval-status-definition">Approval status definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#secret-key">Secret Key</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#check-sum">Check Sum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#error-code">Error Code</a></li>
@@ -113,6 +113,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#access-code-data">Access Code Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#access-token-data">Access Token Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#profile-data">Profile Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shift-data">Shift Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#absent-data">Absent Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overtime-data">Overtime Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#salary-data">Salary Data</a></li>
@@ -228,13 +229,15 @@ Là một biến kiểu <code class="docutils literal"><span class="pre">boolean
 <li>2 - Nghỉ phép không lương.</li>
 </ul>
 </div>
-<div class="section" id="approval-definition">
-<span id="in-rule-approval-mapping"></span><h2>Approval definition<a class="headerlink" href="#approval-definition" title="Permalink to this headline">¶</a></h2>
-<p>Là một biến kiểu <code class="docutils literal"><span class="pre">integer</span></code> xác định trạng thái duyệt đơn nghỉ phép, tăng ca.</p>
+<div class="section" id="approval-status-definition">
+<span id="in-rule-approval-status-mapping"></span><h2>Approval status definition<a class="headerlink" href="#approval-status-definition" title="Permalink to this headline">¶</a></h2>
+<p>Là một biến kiểu <code class="docutils literal"><span class="pre">integer</span></code> xác định trạng thái của đơn xin nghỉ phép/tăng ca.</p>
 <ul class="simple">
-<li>0 - Không duyệt.</li>
-<li>1 - Đồng ý.</li>
-<li>2 - Yêu cầu chỉnh sửa.</li>
+<li>-1 - N/A.</li>
+<li>0 - Chờ duyệt duyệt.</li>
+<li>1 - Đã duyệt.</li>
+<li>2 - Không duyệt.</li>
+<li>3 - Yêu cầu chỉnh sửa.</li>
 </ul>
 </div>
 <div class="section" id="secret-key">
@@ -329,6 +332,25 @@ Là một biến kiểu <code class="docutils literal"><span class="pre">boolean
 </pre></div>
 </div>
 </div>
+<div class="section" id="shift-data">
+<span id="in-rule-shift-profile"></span><h2>Shift Data<a class="headerlink" href="#shift-data" title="Permalink to this headline">¶</a></h2>
+<p>Là một JSON <code class="docutils literal"><span class="pre">object</span></code> nhận được khi xem <a class="reference internal" href="work.html#in-work-timekeeping-history"><span class="std std-ref">History</span></a>. Trong đó:</p>
+<ul class="simple">
+<li><strong>date</strong> (<em>date</em>) - Ngày công.</li>
+<li><strong>in</strong> (<em>object</em>) - Chấm công bắt đầu làm việc.</li>
+<li><strong>out</strong> (<em>object</em>) - Chấm công kết thúc ca/ngày làm việc.</li>
+<li><strong>written_time</strong> (<em>integer</em>) - Thời gian thực hiện chấm công.</li>
+<li><strong>location</strong> (<em>array</em>) - Vị trí thực hiện chấm công.</li>
+</ul>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;date&quot;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">&quot;in&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;writen_time&quot;</span><span class="o">:</span> <span class="nx">integer</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="o">:</span> <span class="p">[</span><span class="nx">lat</span><span class="p">,</span> <span class="kr">long</span><span class="p">]},</span>
+          <span class="s2">&quot;out&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;writen_time&quot;</span><span class="o">:</span> <span class="nx">integer</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="o">:</span> <span class="p">[</span><span class="nx">lat</span><span class="p">,</span> <span class="kr">long</span><span class="p">]}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="absent-data">
 <span id="in-rule-data-absent"></span><h2>Absent Data<a class="headerlink" href="#absent-data" title="Permalink to this headline">¶</a></h2>
 <p>Là một JSON <code class="docutils literal"><span class="pre">object</span></code> nhận được khi <a class="reference internal" href="work.html#in-work-absence-detail"><span class="std std-ref">Absence detail</span></a>. Bao gồm:</p>
@@ -340,9 +362,10 @@ Là một biến kiểu <code class="docutils literal"><span class="pre">boolean
 <li><strong>branch</strong> (<em>string</em>) - Chi nhánh.</li>
 <li><strong>phone</strong> (<em>string</em>) - Điện thoại.</li>
 <li><strong>email</strong> (<em>string</em>) - Thư điện tử.</li>
-<li><strong>absent_time</strong> (<em>arrray</em>) - Thời gian nghỉ [1513651191000, 1513651191000].</li>
+<li><strong>absent_time</strong> (<em>array</em>) - Thời gian nghỉ [1513651191000, 1513651191000].</li>
 <li><strong>kind</strong> (<em>integer</em>) - Loại phép (Xem <a class="reference internal" href="#in-rule-kind-mapping"><span class="std std-ref">Kind definition</span></a>).</li>
 <li><strong>reason</strong> (<em>string</em>) - Lý do.</li>
+<li><strong>status</strong> (<em>integer</em>) - Trạng thái đơn (Xem <a class="reference internal" href="#in-rule-approval-status-mapping"><span class="std std-ref">Approval status definition</span></a>).</li>
 </ul>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
@@ -354,7 +377,8 @@ Là một biến kiểu <code class="docutils literal"><span class="pre">boolean
     <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
     <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">1513651191000</span><span class="p">,</span> <span class="mi">1513651191000</span><span class="p">],</span>
     <span class="s2">&quot;kind&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Sick&quot;</span>
+    <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Sick&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -370,8 +394,9 @@ Là một biến kiểu <code class="docutils literal"><span class="pre">boolean
 <li><strong>branch</strong> (<em>string</em>) - Chi nhánh.</li>
 <li><strong>phone</strong> (<em>string</em>) - Điện thoại.</li>
 <li><strong>email</strong> (<em>string</em>) - Thư điện tử.</li>
-<li><strong>absent_time</strong> (<em>arrray</em>) - Thời gian nghỉ [1513651191000, 1513651191000].</li>
+<li><strong>absent_time</strong> (<em>array</em>) - Thời gian nghỉ [1513651191000, 1513651191000].</li>
 <li><strong>reason</strong> (<em>string</em>) - Lý do.</li>
+<li><strong>status</strong> (<em>integer</em>) - Trạng thái đơn (Xem <a class="reference internal" href="#in-rule-approval-status-mapping"><span class="std std-ref">Approval status definition</span></a>).</li>
 </ul>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
@@ -382,7 +407,8 @@ Là một biến kiểu <code class="docutils literal"><span class="pre">boolean
     <span class="s2">&quot;phone&quot;</span><span class="o">:</span> <span class="s2">&quot;0961095661&quot;</span><span class="p">,</span>
     <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
     <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">1513651191000</span><span class="p">,</span> <span class="mi">1513651191000</span><span class="p">],</span>
-    <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Urgent&quot;</span>
+    <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Urgent&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span>
 <span class="p">}</span>
 </pre></div>
 </div>

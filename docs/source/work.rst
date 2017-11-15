@@ -83,6 +83,53 @@ Check-Out
       }
 
 
+
+.. _in-work-timekeeping-history:
+
+History
+~~~~~~~
+
+.. http:post::  /api/v1/works/timekeeping/history
+
+   :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
+
+   .. sourcecode:: js
+
+      {
+          "access_token": "_HASH_",
+          "checksum": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963"
+      }
+
+
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json string error_message: :ref:`in-rule-error-message`.
+   :>json object data: Xem :ref:`in-rule-shift-profile`.
+
+   .. sourcecode:: js
+
+      {
+          "error_code": 0,
+          "error_message": "",
+          "data": [{
+             "1513651191000": {
+	         	"in": {
+	         		"writen_time": 1513651191000,
+	         		"location": [10.785092, 106.6913373]
+	         	},
+	         	"out": {
+	         		"writen_time": 1513651191001,
+	         		"location": [10.785092, 106.6913373]
+	         	}
+	         }
+          }]
+      }
+
+
 .. _in-work-absent:
 
 Absent activity
@@ -136,7 +183,7 @@ Absence approval
    :arg access_token: Xem :ref:`in-get-token`.
    :arg checksum: :ref:`in-rule-checksum`.
    :arg absence_id: ID của đơn xin phép.
-   :arg approval: Phê duyệt (Xem :ref:`in-rule-approval-mapping`).
+   :arg approval: Phê duyệt (Xem :ref:`in-rule-approval-status-mapping`).
    :arg message: Lời nhắn đến người gửi đơn.
 
    .. sourcecode:: js
@@ -160,9 +207,6 @@ Absence approval
           "error_message": ""
       }
 
-
-.. note:: API bên dưới vừa được chỉnh sửa lúc 14:30 ngày 14/11/2017.
-          Bao gồm 2 key ở phần response là absence_id và status.
 
 Absence table
 ~~~~~~~~~~~~~
@@ -351,7 +395,7 @@ Overtime approval
    :arg access_token: Xem :ref:`in-get-token`.
    :arg checksum: :ref:`in-rule-checksum`.
    :arg overtime_id: ID của đơn yêu cầu tăng ca.
-   :arg approval: Phê duyệt (Xem :ref:`in-rule-approval-mapping`).
+   :arg approval: Phê duyệt (Xem :ref:`in-rule-approval-status-mapping`).
    :arg message: Lời nhắn đến người gửi đơn.
 
    .. sourcecode:: js
@@ -376,9 +420,6 @@ Overtime approval
       }
 
 
-.. note:: API bên dưới vừa được chỉnh sửa lúc 14:30 ngày 14/11/2017.
-          Bao gồm 2 key ở phần response là overtime_id và status.
-
 Overtime table
 ~~~~~~~~~~~~~~
 
@@ -386,12 +427,16 @@ Overtime table
 
    :arg access_token: Xem :ref:`in-get-token`.
    :arg checksum: :ref:`in-rule-checksum`.
+   :arg user_id: ID người dùng (quản lý hoặc nhân viên).
+   :arg client_id: ID client.
 
    .. sourcecode:: js
 
       {
           "access_token": "_HASH_",
-          "checksum": "_HASH_"
+          "checksum": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963"
       }
 
 
