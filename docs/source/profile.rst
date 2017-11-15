@@ -6,6 +6,7 @@ Tài liệu này mô tả cách sử dụng thông tin người dùng từ WebSe
 * :ref:`in-profile-get`
 * :ref:`in-profile-update`
 * :ref:`in-profile-permission`
+* :ref:`in-profile-shift`
 
 .. _in-profile-get:
 
