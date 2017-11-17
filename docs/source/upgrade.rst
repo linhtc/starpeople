@@ -1,0 +1,65 @@
+Upgrade table
+=============
+
+Phần này liệt kê những APIs nào đã được thay đổi hoặc thêm vào.
+
+.. note:: Các phần được cập nhật trong version latest (1.0.1) ngày 17/11/2017.
+ 
+* 1 - :ref:`in-profile-permission`.
+* 2 - :ref:`in-profile-shift`.
+* 3 - :ref:`in-profile-get`.
+* 4 - :ref:`in-work-overtime-table`.
+
+:ref:`in-profile-permission`
+----------------------------
+API này mới được thêm vào nhằm lấy quyền truy cập vào các tính năng của ứng dụng.
+Dữ liệu nhận về là một ``object`` có dạng:
+
+.. sourcecode:: js
+
+      {
+         "profile": {"get":1, "update":1},
+         "absence": {"apply":1, "confirm":0, "apply":1, "table":1, "management":1},
+         "overtime": {"apply":1, "confirm":0, "apply":1, "table":1, "management":1},
+         "salary": {"get":1}
+      }
+
+
+:ref:`in-profile-shift`
+-----------------------
+API này mới được thêm vào nhằm lấy danh sách ca làm việc của một nhân viên.
+Dữ liệu nhận về là một ``object`` có dạng:
+
+.. sourcecode:: js
+
+      {
+         "day":
+         {
+         	"name":"Hanh Chinh",
+         	"time_in":"8:00",
+         	"start_rest":"12:00",
+         	"end_rest":"13:30",
+         	"time_out":"17:30"
+         }
+      }
+
+
+:ref:`in-profile-get`
+-----------------------------
+API này đã có trước đó và được cập nhật lại các phần sau:
+
+* **address** (*string*) - Thêm address key trong Response.
+
+
+:ref:`in-work-overtime-table`
+-----------------------------
+API này đã có trước đó và được cập nhật lại các phần sau:
+
+* **user_id** (*string*) - Thêm ID định danh người dùng trong Request.
+* **client_id** (*string*) - Thêm Client ID trong Request.
+
+
+.. note:: Các phần được cập nhật trong version 1.0.0.
+
+Không có dữ liệu nào được thêm vào!
+ 

@@ -420,6 +420,8 @@ Overtime approval
       }
 
 
+.. _in-work-overtime-table:
+
 Overtime table
 ~~~~~~~~~~~~~~
 

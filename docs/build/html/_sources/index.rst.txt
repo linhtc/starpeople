@@ -20,7 +20,7 @@ Welcome to Star People Documentation!
    :caption: About Documentation
 
    rule
-   team
+   upgrade
 
 Indices and tables
 ==================
