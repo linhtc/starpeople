@@ -8,7 +8,8 @@ Phần này liệt kê những APIs nào đã được thay đổi hoặc thêm 
 * 1 - :ref:`in-profile-permission`.
 * 2 - :ref:`in-profile-shift`.
 * 3 - :ref:`in-profile-get`.
-* 4 - :ref:`in-work-overtime-table`.
+* 4 - :ref:`in-work-timekeeping-history`.
+* 5 - :ref:`in-work-overtime-table`.
 
 :ref:`in-profile-permission`
 ----------------------------
@@ -49,6 +50,28 @@ Dữ liệu nhận về là một ``object`` có dạng:
 API này đã có trước đó và được cập nhật lại các phần sau:
 
 * **address** (*string*) - Thêm address key trong Response.
+
+
+:ref:`in-work-timekeeping-history`
+----------------------------------
+API này mới được thêm vào nhằm lấy lịch sử chấm công của nhân viên.
+Dữ liệu nhận về là một ``array object`` có dạng:
+
+.. sourcecode:: js
+
+      [{
+         "1513651191000": {
+         	"in": {
+         		"writen_time": 1513651191000,
+         		"location": [10.785092, 106.6913373]
+         	},
+         	"out": {
+         		"writen_time": 1513651191001,
+         		"location": [10.785092, 106.6913373]
+         	}
+         }
+      }]
+
 
 
 :ref:`in-work-overtime-table`

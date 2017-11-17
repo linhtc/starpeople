@@ -105,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#in-profile-permission"><code class="docutils literal"><span class="pre">in-profile-permission</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-profile-shift"><code class="docutils literal"><span class="pre">in-profile-shift</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-profile-get"><code class="docutils literal"><span class="pre">in-profile-get</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#in-work-timekeeping-history"><code class="docutils literal"><span class="pre">in-work-timekeeping-history</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-work-overtime-table"><code class="docutils literal"><span class="pre">in-work-overtime-table</span></code></a></li>
 </ul>
 </li>
@@ -182,7 +183,8 @@
 <li>1 - <a class="reference internal" href="profile.html#in-profile-permission"><span class="std std-ref">Get permission</span></a>.</li>
 <li>2 - <a class="reference internal" href="profile.html#in-profile-shift"><span class="std std-ref">Get shift</span></a>.</li>
 <li>3 - <a class="reference internal" href="profile.html#in-profile-get"><span class="std std-ref">Get profile</span></a>.</li>
-<li>4 - <a class="reference internal" href="work.html#in-work-overtime-table"><span class="std std-ref">Overtime table</span></a>.</li>
+<li>4 - <a class="reference internal" href="work.html#in-work-timekeeping-history"><span class="std std-ref">History</span></a>.</li>
+<li>5 - <a class="reference internal" href="work.html#in-work-overtime-table"><span class="std std-ref">Overtime table</span></a>.</li>
 </ul>
 <div class="section" id="in-profile-permission">
 <h2><a class="reference internal" href="profile.html#in-profile-permission"><span class="std std-ref">Get permission</span></a><a class="headerlink" href="#in-profile-permission" title="Permalink to this headline">¶</a></h2>
@@ -220,6 +222,25 @@ Dữ liệu nhận về là một <code class="docutils literal"><span class="pr
 <ul class="simple">
 <li><strong>address</strong> (<em>string</em>) - Thêm address key trong Response.</li>
 </ul>
+</div>
+<div class="section" id="in-work-timekeeping-history">
+<h2><a class="reference internal" href="work.html#in-work-timekeeping-history"><span class="std std-ref">History</span></a><a class="headerlink" href="#in-work-timekeeping-history" title="Permalink to this headline">¶</a></h2>
+<p>API này mới được thêm vào nhằm lấy lịch sử chấm công của nhân viên.
+Dữ liệu nhận về là một <code class="docutils literal"><span class="pre">array</span> <span class="pre">object</span></code> có dạng:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">[{</span>
+   <span class="s2">&quot;1513651191000&quot;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">&quot;in&quot;</span><span class="o">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;writen_time&quot;</span><span class="o">:</span> <span class="mi">1513651191000</span><span class="p">,</span>
+                  <span class="s2">&quot;location&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mf">10.785092</span><span class="p">,</span> <span class="mf">106.6913373</span><span class="p">]</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;out&quot;</span><span class="o">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;writen_time&quot;</span><span class="o">:</span> <span class="mi">1513651191001</span><span class="p">,</span>
+                  <span class="s2">&quot;location&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mf">10.785092</span><span class="p">,</span> <span class="mf">106.6913373</span><span class="p">]</span>
+          <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="in-work-overtime-table">
 <h2><a class="reference internal" href="work.html#in-work-overtime-table"><span class="std std-ref">Overtime table</span></a><a class="headerlink" href="#in-work-overtime-table" title="Permalink to this headline">¶</a></h2>
