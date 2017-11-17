@@ -107,6 +107,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#in-profile-get"><code class="docutils literal"><span class="pre">in-profile-get</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-work-timekeeping-history"><code class="docutils literal"><span class="pre">in-work-timekeeping-history</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-work-overtime-table"><code class="docutils literal"><span class="pre">in-work-overtime-table</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#in-profile-change-pw"><code class="docutils literal"><span class="pre">in-profile-change-pw</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#in-profile-reset-pw"><code class="docutils literal"><span class="pre">in-profile-reset-pw</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -283,6 +285,29 @@ Dữ liệu nhận về là một <code class="docutils literal"><span class="pr
 <li><strong>user_id</strong> (<em>string</em>) - Thêm ID định danh người dùng trong Request.</li>
 <li><strong>client_id</strong> (<em>string</em>) - Thêm Client ID trong Request.</li>
 </ul>
+</div>
+<div class="section" id="in-profile-change-pw">
+<h2><a class="reference internal" href="profile.html#in-profile-change-pw"><span class="std std-ref">Change password</span></a><a class="headerlink" href="#in-profile-change-pw" title="Permalink to this headline">¶</a></h2>
+<p>API này mới được thêm vào cho phép người dùng tự thay đổi mật khẩu đăng nhập.
+Dữ liệu nhận về là một <code class="docutils literal"><span class="pre">object</span></code> có dạng:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="in-profile-reset-pw">
+<h2><a class="reference internal" href="profile.html#in-profile-reset-pw"><span class="std std-ref">Reset password</span></a><a class="headerlink" href="#in-profile-reset-pw" title="Permalink to this headline">¶</a></h2>
+<p>API này mới được thêm vào cho phép người dùng không thể thay đổi mật khẩu mới (do quên, etc.).
+<strong>Mật khẩu reset</strong> sẽ được gửi qua email của chính user đó.
+Dữ liệu nhận về là một <code class="docutils literal"><span class="pre">object</span></code> có dạng:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Các phần được cập nhật trong version 1.0.1.</p>

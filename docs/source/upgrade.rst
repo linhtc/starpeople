@@ -85,7 +85,6 @@ Dữ liệu nhận về là một ``array object`` có dạng:
       }]
 
 
-
 :ref:`in-work-overtime-table`
 -----------------------------
 API này đã có trước đó và được cập nhật lại các phần sau:
@@ -94,7 +93,35 @@ API này đã có trước đó và được cập nhật lại các phần sau:
 * **client_id** (*string*) - Thêm Client ID trong Request.
 
 
+:ref:`in-profile-change-pw`
+---------------------------
+API này mới được thêm vào cho phép người dùng tự thay đổi mật khẩu đăng nhập.
+Dữ liệu nhận về là một ``object`` có dạng:
+
+.. sourcecode:: js
+
+      {
+          "error_code": 0,
+          "error_message": ""
+      }
+
+:ref:`in-profile-reset-pw`
+--------------------------
+API này mới được thêm vào cho phép người dùng không thể thay đổi mật khẩu mới (do quên, etc.).
+**Mật khẩu reset** sẽ được gửi qua email của chính user đó.
+Dữ liệu nhận về là một ``object`` có dạng:
+
+.. sourcecode:: js
+
+      {
+          "error_code": 0,
+          "error_message": ""
+      }
+
+
+
 .. note:: Các phần được cập nhật trong version 1.0.1.
 
 Không có dữ liệu nào được thêm vào!
+
  
