@@ -3,7 +3,7 @@ Upgrade table
 
 Phần này liệt kê những APIs nào đã được thay đổi hoặc thêm vào.
 
-.. note:: Các phần được cập nhật trong version latest (1.0.1) ngày 17/11/2017.
+.. note:: Các phần được cập nhật trong version latest (1.0.2) ngày 17/11/2017.
  
 * 1 - :ref:`in-profile-permission`.
 * 2 - :ref:`in-profile-shift`.
@@ -82,7 +82,7 @@ API này đã có trước đó và được cập nhật lại các phần sau:
 * **client_id** (*string*) - Thêm Client ID trong Request.
 
 
-.. note:: Các phần được cập nhật trong version 1.0.0.
+.. note:: Các phần được cập nhật trong version 1.0.1.
 
 Không có dữ liệu nào được thêm vào!
  
