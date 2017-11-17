@@ -179,6 +179,7 @@
 <li><a class="reference internal" href="#in-profile-get"><span class="std std-ref">Get profile</span></a></li>
 <li><a class="reference internal" href="#in-profile-update"><span class="std std-ref">Update profile</span></a></li>
 <li><a class="reference internal" href="#in-profile-permission"><span class="std std-ref">Get permission</span></a></li>
+<li><a class="reference internal" href="#in-profile-shift"><span class="std std-ref">Get shift</span></a></li>
 </ul>
 <div class="section" id="get-profile">
 <span id="in-profile-get"></span><h2>Get profile<a class="headerlink" href="#get-profile" title="Permalink to this headline">¶</a></h2>
@@ -403,8 +404,14 @@
     <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data&quot;</span><span class="o">:</span>
     <span class="p">{</span>
-       <span class="s2">&quot;day&quot;</span><span class="o">:</span><span class="p">[</span><span class="mi">8</span><span class="o">:</span><span class="mi">00</span><span class="p">,</span> <span class="mi">17</span><span class="o">:</span><span class="mi">30</span><span class="p">],</span>
-       <span class="s2">&quot;night&quot;</span><span class="o">:</span><span class="p">[</span><span class="mi">18</span><span class="o">:</span><span class="mi">00</span><span class="p">,</span> <span class="mi">22</span><span class="o">:</span><span class="mi">00</span><span class="p">]</span>
+       <span class="s2">&quot;day&quot;</span><span class="o">:</span>
+       <span class="p">{</span>
+          <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Hanh Chinh&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;time_in&quot;</span><span class="o">:</span><span class="s2">&quot;8:00&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;start_rest&quot;</span><span class="o">:</span><span class="s2">&quot;12:00&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;end_rest&quot;</span><span class="o">:</span><span class="s2">&quot;13:30&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;time_out&quot;</span><span class="o">:</span><span class="s2">&quot;17:30&quot;</span>
+       <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>

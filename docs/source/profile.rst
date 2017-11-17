@@ -168,8 +168,14 @@ Get shift
           "error_message": "",
           "data":
           {
-             "day":[8:00, 17:30],
-             "night":[18:00, 22:00]
+             "day":
+             {
+             	"name":"Hanh Chinh",
+             	"time_in":"8:00",
+             	"start_rest":"12:00",
+             	"end_rest":"13:30",
+             	"time_out":"17:30"
+             }
           }
       }
 
