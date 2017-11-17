@@ -95,6 +95,77 @@ Update profile
 
 
 
+.. _in-profile-change-pw:
+
+Change password
+---------------
+.. http:post::  /api/v1/profile/change-password
+
+   :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
+   :arg current: Mật khẩu hiện tại (Đã mã hóa với :ref:`in-rule-secret-key`).
+   :arg new: Mật khẩu mới (Đã mã hóa với :ref:`in-rule-secret-key`).
+
+   .. sourcecode:: js
+
+      {
+          "access_token": "_HASH_",
+          "checksum": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963",
+          "current": "_HASH_",
+          "new": "_HASH_"
+      }
+
+
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json string error_message: :ref:`in-rule-error-message`.
+
+   .. sourcecode:: js
+
+      {
+          "error_code": 0,
+          "error_message": ""
+      }
+
+
+
+.. _in-profile-reset-pw:
+
+Reset password
+--------------
+.. http:post::  /api/v1/profile/reset-password
+
+   :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
+
+   .. sourcecode:: js
+
+      {
+          "access_token": "_HASH_",
+          "checksum": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963"
+      }
+
+
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json string error_message: :ref:`in-rule-error-message`.
+
+   .. sourcecode:: js
+
+      {
+          "error_code": 0,
+          "error_message": ""
+      }
+
+
+.. note:: Generate ra một mật khẩu mới và gửi mật khẩu này vào email của user_id trên.
+
 .. _in-profile-permission:
 
 Get permission
