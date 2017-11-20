@@ -197,12 +197,11 @@ Get permission
           "error_code": 0,
           "error_message": "",
           "data":
-          {
-             "profile": {"get":1, "update":1},
-             "absence": {"apply":1, "confirm":0, "apply":1, "table":1, "management":1},
-             "overtime": {"apply":1, "confirm":0, "apply":1, "table":1, "management":1},
-             "salary": {"get":1}
-          }
+          [
+             {"code":"CODE1", "name":"NAME1", "insert":1, "update":1, "delete":1},
+             {"code":"CODE2", "name":"NAME2", "insert":1, "update":1, "delete":1},
+             {"code":"CODE3", "name":"NAME3", "insert":1, "update":1, "delete":1}
+          ]
       }
 
 
@@ -217,6 +216,8 @@ Get shift
    :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
+   :arg from_date: Lấy dữ liệu từ ngày.
+   :arg to_date: Lấy dữ liệu đến ngày.
 
    .. sourcecode:: js
 
@@ -224,7 +225,9 @@ Get shift
           "access_token": "_HASH_",
           "checksum": "_HASH_",
           "user_id": "18963",
-          "client_id": "18963"
+          "client_id": "18963",
+          "from_date": "2017-11-01",
+          "to_date": "2017-11-30"
       }
 
 

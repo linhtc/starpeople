@@ -16,11 +16,13 @@ Phần này liệt kê những APIs nào đã được thay đổi hoặc thêm 
 +-----+------------------------------------------+----------------------------------------------+
 | 4   | :ref:`in-work-timekeeping-history`       | ``new`` Xem lich su cham cong                |
 +-----+------------------------------------------+----------------------------------------------+
-| 5   | :ref:`in-work-overtime-table`            | ``update`` Lay danh sach xin nghi phep       |
+| 5   | :ref:`in-work-absence-table`             | ``update`` Lay danh sach xin nghi phep       |
 +-----+------------------------------------------+----------------------------------------------+
-| 6   | :ref:`in-profile-change-pw`              | ``new`` Doi mat khau                         |
+| 6   | :ref:`in-work-overtime-table`            | ``update`` Lay danh sach xin tang ca         |
 +-----+------------------------------------------+----------------------------------------------+
-| 7   | :ref:`in-profile-reset-pw`               | ``new`` Reset mat khau                       |
+| 7   | :ref:`in-profile-change-pw`              | ``new`` Doi mat khau                         |
++-----+------------------------------------------+----------------------------------------------+
+| 8   | :ref:`in-profile-reset-pw`               | ``new`` Reset mat khau                       |
 +-----+------------------------------------------+----------------------------------------------+
 
 :ref:`in-profile-permission`
@@ -30,12 +32,11 @@ Dữ liệu nhận về là một ``object`` có dạng:
 
 .. sourcecode:: js
 
-      {
-         "profile": {"get":1, "update":1},
-         "absence": {"apply":1, "confirm":0, "apply":1, "table":1, "management":1},
-         "overtime": {"apply":1, "confirm":0, "apply":1, "table":1, "management":1},
-         "salary": {"get":1}
-      }
+      [
+         {"code":"CODE1", "name":"NAME1", "insert":1, "update":1, "delete":1},
+         {"code":"CODE2", "name":"NAME2", "insert":1, "update":1, "delete":1},
+         {"code":"CODE3", "name":"NAME3", "insert":1, "update":1, "delete":1}
+      ]
 
 
 :ref:`in-profile-shift`
@@ -85,12 +86,21 @@ Dữ liệu nhận về là một ``array object`` có dạng:
       }]
 
 
+:ref:`in-work-absence-table`
+----------------------------
+API này đã có trước đó và được cập nhật lại các phần sau:
+
+* **from_date** (*date*) - Từ ngày.
+* **to_date** (*date*) - Đến ngày.
+
 :ref:`in-work-overtime-table`
 -----------------------------
 API này đã có trước đó và được cập nhật lại các phần sau:
 
 * **user_id** (*string*) - Thêm ID định danh người dùng trong Request.
 * **client_id** (*string*) - Thêm Client ID trong Request.
+* **from_date** (*date*) - Từ ngày.
+* **to_date** (*date*) - Đến ngày.
 
 
 :ref:`in-profile-change-pw`

@@ -106,6 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#in-profile-shift"><code class="docutils literal"><span class="pre">in-profile-shift</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-profile-get"><code class="docutils literal"><span class="pre">in-profile-get</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-work-timekeeping-history"><code class="docutils literal"><span class="pre">in-work-timekeeping-history</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#in-work-absence-table"><code class="docutils literal"><span class="pre">in-work-absence-table</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-work-overtime-table"><code class="docutils literal"><span class="pre">in-work-overtime-table</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-profile-change-pw"><code class="docutils literal"><span class="pre">in-profile-change-pw</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-profile-reset-pw"><code class="docutils literal"><span class="pre">in-profile-reset-pw</span></code></a></li>
@@ -209,14 +210,18 @@
 <td><code class="docutils literal"><span class="pre">new</span></code> Xem lich su cham cong</td>
 </tr>
 <tr class="row-even"><td>5</td>
-<td><a class="reference internal" href="work.html#in-work-overtime-table"><span class="std std-ref">Overtime table</span></a></td>
+<td><a class="reference internal" href="work.html#in-work-absence-table"><span class="std std-ref">Absence table</span></a></td>
 <td><code class="docutils literal"><span class="pre">update</span></code> Lay danh sach xin nghi phep</td>
 </tr>
 <tr class="row-odd"><td>6</td>
+<td><a class="reference internal" href="work.html#in-work-overtime-table"><span class="std std-ref">Overtime table</span></a></td>
+<td><code class="docutils literal"><span class="pre">update</span></code> Lay danh sach xin tang ca</td>
+</tr>
+<tr class="row-even"><td>7</td>
 <td><a class="reference internal" href="profile.html#in-profile-change-pw"><span class="std std-ref">Change password</span></a></td>
 <td><code class="docutils literal"><span class="pre">new</span></code> Doi mat khau</td>
 </tr>
-<tr class="row-even"><td>7</td>
+<tr class="row-odd"><td>8</td>
 <td><a class="reference internal" href="profile.html#in-profile-reset-pw"><span class="std std-ref">Reset password</span></a></td>
 <td><code class="docutils literal"><span class="pre">new</span></code> Reset mat khau</td>
 </tr>
@@ -226,12 +231,11 @@
 <h2><a class="reference internal" href="profile.html#in-profile-permission"><span class="std std-ref">Get permission</span></a><a class="headerlink" href="#in-profile-permission" title="Permalink to this headline">¶</a></h2>
 <p>API này mới được thêm vào nhằm lấy quyền truy cập vào các tính năng của ứng dụng.
 Dữ liệu nhận về là một <code class="docutils literal"><span class="pre">object</span></code> có dạng:</p>
-<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="s2">&quot;profile&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;get&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;update&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
-   <span class="s2">&quot;absence&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;apply&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;confirm&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;apply&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;table&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;management&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
-   <span class="s2">&quot;overtime&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;apply&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;confirm&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;apply&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;table&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;management&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
-   <span class="s2">&quot;salary&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;get&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="s2">&quot;CODE1&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;NAME1&quot;</span><span class="p">,</span> <span class="s2">&quot;insert&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;update&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;delete&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
+   <span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="s2">&quot;CODE2&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;NAME2&quot;</span><span class="p">,</span> <span class="s2">&quot;insert&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;update&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;delete&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
+   <span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="s2">&quot;CODE3&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;NAME3&quot;</span><span class="p">,</span> <span class="s2">&quot;insert&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;update&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;delete&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -278,12 +282,22 @@ Dữ liệu nhận về là một <code class="docutils literal"><span class="pr
 </pre></div>
 </div>
 </div>
+<div class="section" id="in-work-absence-table">
+<h2><a class="reference internal" href="work.html#in-work-absence-table"><span class="std std-ref">Absence table</span></a><a class="headerlink" href="#in-work-absence-table" title="Permalink to this headline">¶</a></h2>
+<p>API này đã có trước đó và được cập nhật lại các phần sau:</p>
+<ul class="simple">
+<li><strong>from_date</strong> (<em>date</em>) - Từ ngày.</li>
+<li><strong>to_date</strong> (<em>date</em>) - Đến ngày.</li>
+</ul>
+</div>
 <div class="section" id="in-work-overtime-table">
 <h2><a class="reference internal" href="work.html#in-work-overtime-table"><span class="std std-ref">Overtime table</span></a><a class="headerlink" href="#in-work-overtime-table" title="Permalink to this headline">¶</a></h2>
 <p>API này đã có trước đó và được cập nhật lại các phần sau:</p>
 <ul class="simple">
 <li><strong>user_id</strong> (<em>string</em>) - Thêm ID định danh người dùng trong Request.</li>
 <li><strong>client_id</strong> (<em>string</em>) - Thêm Client ID trong Request.</li>
+<li><strong>from_date</strong> (<em>date</em>) - Từ ngày.</li>
+<li><strong>to_date</strong> (<em>date</em>) - Đến ngày.</li>
 </ul>
 </div>
 <div class="section" id="in-profile-change-pw">

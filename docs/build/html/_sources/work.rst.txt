@@ -95,6 +95,8 @@ History
    :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
+   :arg from_date: Lấy dữ liệu từ ngày.
+   :arg to_date: Lấy dữ liệu đến ngày.
 
    .. sourcecode:: js
 
@@ -102,7 +104,9 @@ History
           "access_token": "_HASH_",
           "checksum": "_HASH_",
           "user_id": "18963",
-          "client_id": "18963"
+          "client_id": "18963",
+          "from_date": "2017-11-01",
+          "to_date": "2017-11-30"
       }
 
 
@@ -208,6 +212,8 @@ Absence approval
       }
 
 
+.. _in-work-absence-table:
+
 Absence table
 ~~~~~~~~~~~~~
 
@@ -217,6 +223,8 @@ Absence table
    :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
+   :arg from_date: Lấy dữ liệu từ ngày.
+   :arg to_date: Lấy dữ liệu đến ngày.
 
    .. sourcecode:: js
 
@@ -224,7 +232,9 @@ Absence table
           "access_token": "_HASH_",
           "checksum": "_HASH_",
           "user_id": "18963",
-          "client_id": "18963"
+          "client_id": "18963",
+          "from_date": "2017-11-01",
+          "to_date": "2017-11-30"
       }
 
 
@@ -431,6 +441,8 @@ Overtime table
    :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng (quản lý hoặc nhân viên).
    :arg client_id: ID client.
+   :arg from_date: Lấy dữ liệu từ ngày.
+   :arg to_date: Lấy dữ liệu đến ngày.
 
    .. sourcecode:: js
 
@@ -438,7 +450,9 @@ Overtime table
           "access_token": "_HASH_",
           "checksum": "_HASH_",
           "user_id": "18963",
-          "client_id": "18963"
+          "client_id": "18963",
+          "from_date": "2017-11-01",
+          "to_date": "2017-11-30"
       }
 
 

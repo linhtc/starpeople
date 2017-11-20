@@ -454,12 +454,11 @@
     <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data&quot;</span><span class="o">:</span>
-    <span class="p">{</span>
-       <span class="s2">&quot;profile&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;get&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;update&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
-       <span class="s2">&quot;absence&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;apply&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;confirm&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;apply&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;table&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;management&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
-       <span class="s2">&quot;overtime&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;apply&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;confirm&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;apply&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;table&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;management&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
-       <span class="s2">&quot;salary&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;get&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">}</span>
-    <span class="p">}</span>
+    <span class="p">[</span>
+       <span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="s2">&quot;CODE1&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;NAME1&quot;</span><span class="p">,</span> <span class="s2">&quot;insert&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;update&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;delete&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
+       <span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="s2">&quot;CODE2&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;NAME2&quot;</span><span class="p">,</span> <span class="s2">&quot;insert&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;update&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;delete&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
+       <span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="s2">&quot;CODE3&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;NAME3&quot;</span><span class="p">,</span> <span class="s2">&quot;insert&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;update&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;delete&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">}</span>
+    <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -480,6 +479,8 @@
 <li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
 <li><strong>user_id</strong> &#8211; ID người dùng.</li>
 <li><strong>client_id</strong> &#8211; ID client.</li>
+<li><strong>from_date</strong> &#8211; Lấy dữ liệu từ ngày.</li>
+<li><strong>to_date</strong> &#8211; Lấy dữ liệu đến ngày.</li>
 </ul>
 </td>
 </tr>
@@ -489,7 +490,9 @@
     <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
     <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
     <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span>
+    <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;from_date&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-11-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;to_date&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-11-30&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
