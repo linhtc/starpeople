@@ -13,6 +13,14 @@ Phần này liệt kê những APIs nào đã được thay đổi hoặc thêm 
 | 2   | :ref:`in-work-overtime-employee-table`   | ``new`` Lay danh sach nhan vien xin tang ca  |
 +-----+------------------------------------------+----------------------------------------------+
 
+:ref:`in-work-absence-employee-table`
+-------------------------------------
+API này mới được thêm vào để người quản lý lấy danh sách nhân viên xin nghỉ phép.
+
+:ref:`in-work-overtime-employee-table`
+--------------------------------------
+API này mới được thêm vào để người quản lý lấy danh sách nhân viên xin tăng ca.
+
 
 .. note:: Các phần được cập nhật trong version latest (1.0.2) ngày 17/11/2017.
  
