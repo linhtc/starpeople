@@ -3,7 +3,7 @@ Upgrade table
 
 Phần này liệt kê những APIs nào đã được thay đổi hoặc thêm vào.
 
-.. note:: Các phần được cập nhật trong version latest (1.0.2) ngày 17/11/2017.
+.. note:: Các phần được cập nhật trong version latest (1.0.2) ngày 30/11/2017.
  
 +-----+------------------------------------------+----------------------------------------------+
 | STT | APIs                                     | Description                                  |
