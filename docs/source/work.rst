@@ -264,6 +264,58 @@ Absence table
       }
 
 
+.. _in-work-absence-employee-table:
+
+Absence employee table
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. http:post::  /api/v1/works/absent/employee-table
+
+   :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
+   :arg user_id: ID người quản lý.
+   :arg client_id: ID client.
+   :arg from_date: Lấy dữ liệu từ ngày.
+   :arg to_date: Lấy dữ liệu đến ngày.
+
+   .. sourcecode:: js
+
+      {
+          "access_token": "_HASH_",
+          "checksum": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963",
+          "from_date": "2017-11-01",
+          "to_date": "2017-11-30"
+      }
+
+
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json string error_message: :ref:`in-rule-error-message`.
+   :>json array data: Danh sách các `Absence detail`_ object..
+
+   .. sourcecode:: js
+
+      {
+          "error_code": 0,
+          "error_message": "",
+          "data": [{
+             "absence_id": "19863",
+             "user_id": "18963",
+             "fullname": "Leon Tran",
+             "position": "DEV",
+             "deparment": "VAS",
+             "branch": "HCM",
+             "phone": "0961095661",
+             "email": "leon.tran@mobistar.vn",
+             "absent_time": [1513651191000, 1513651191000],
+             "kind": 0,
+             "reason": "Bệnh",
+             "status": 0
+          }]
+      }
+
+
 .. _in-work-absence-detail:
 
 Absence detail
@@ -440,6 +492,58 @@ Overtime table
    :arg access_token: Xem :ref:`in-get-token`.
    :arg checksum: :ref:`in-rule-checksum`.
    :arg user_id: ID người dùng (quản lý hoặc nhân viên).
+   :arg client_id: ID client.
+   :arg from_date: Lấy dữ liệu từ ngày.
+   :arg to_date: Lấy dữ liệu đến ngày.
+
+   .. sourcecode:: js
+
+      {
+          "access_token": "_HASH_",
+          "checksum": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963",
+          "from_date": "2017-11-01",
+          "to_date": "2017-11-30"
+      }
+
+
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json string error_message: :ref:`in-rule-error-message`.
+   :>json array data: Danh sách các `Overtime detail`_ object..
+
+   .. sourcecode:: js
+
+      {
+          "error_code": 0,
+          "error_message": "",
+          "data": [{
+             "overtime_id": "19863",
+             "user_id": "18963",
+             "fullname": "Leon Tran",
+             "position": "DEV",
+             "deparment": "VAS",
+             "branch": "HCM",
+             "phone": "0961095661",
+             "email": "leon.tran@mobistar.vn",
+             "overtime_time": [1513651191000, 1513651191000],
+             "reason": "Urgent",
+             "status": 0
+          }]
+      }
+
+
+
+.. _in-work-overtime-employee-table:
+
+Overtime employee table
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. http:post::  /api/v1/works/overtime/employee-table
+
+   :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
+   :arg user_id: ID người quản lý.
    :arg client_id: ID client.
    :arg from_date: Lấy dữ liệu từ ngày.
    :arg to_date: Lấy dữ liệu đến ngày.
