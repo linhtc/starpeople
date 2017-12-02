@@ -56,7 +56,7 @@ Approval status definition
 Là một biến kiểu ``integer`` xác định trạng thái của đơn xin nghỉ phép/tăng ca.
 
 * -1 - N/A.
-* 0 - Chờ duyệt duyệt.
+* 0 - Chờ duyệt.
 * 1 - Đã duyệt.
 * 2 - Không duyệt.
 * 3 - Yêu cầu chỉnh sửa.
