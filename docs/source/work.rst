@@ -179,6 +179,52 @@ Apply for absence
       }
 
 
+.. _in-work-update-application-absence:
+
+Update Application of Absence
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. http:post::  /api/v1/works/absent/update-application
+
+   :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
+   :arg absence_id: ID của đơn xin phép.
+   :arg start_time: Thời gian bắt đầu.
+   :arg end_time: Thời gian kết thúc.
+   :arg kind: Loại phép (Xem :ref:`in-rule-kind-mapping`).
+   :arg reason: Lý do nghỉ.
+   :arg hidden: Ẩn đi (0 hiện, 1 ẩn).
+
+   .. sourcecode:: js
+
+      {
+          "access_token": "_HASH_",
+          "checksum": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963",
+          "absence_id": "19863",
+          "start_time": "2017-08-14 08:00",
+          "end_time": "2017-08-15 08:00",
+          "kind": 0,
+          "reason": "Bệnh rất nặng :((",
+          "hidden": "0"
+      }
+
+
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json string error_message: :ref:`in-rule-error-message`.
+
+   .. sourcecode:: js
+
+      {
+          "error_code": 0,
+          "error_message": ""
+      }
+
+
+
 Absence approval
 ~~~~~~~~~~~~~~~~
 
@@ -257,6 +303,7 @@ Absence table
              "phone": "0961095661",
              "email": "leon.tran@mobistar.vn",
              "absent_time": [1513651191000, 1513651191000],
+             "total_time": 1,
              "kind": 0,
              "reason": "Bệnh",
              "status": 0
@@ -309,6 +356,7 @@ Absence employee table
              "phone": "0961095661",
              "email": "leon.tran@mobistar.vn",
              "absent_time": [1513651191000, 1513651191000],
+             "total_time": 1,
              "kind": 0,
              "reason": "Bệnh",
              "status": 0
@@ -356,6 +404,7 @@ Absence detail
              "phone": "0961095661",
              "email": "leon.tran@mobistar.vn",
              "absent_time": [1513651191000, 1513651191000],
+             "total_time": 1,
              "kind": 0,
              "reason": "Bệnh",
              "status": 0
@@ -435,6 +484,49 @@ Apply for OT
           "start_time": "2017-08-14 08:00",
           "end_time": "2017-08-15 08:00",
           "reason": "ItViec - Ít mà chất nên làm chậm deadline ;(("
+      }
+
+
+   :>json integer error_code: :ref:`in-rule-error-code`.
+   :>json string error_message: :ref:`in-rule-error-message`.
+
+   .. sourcecode:: js
+
+      {
+          "error_code": 0,
+          "error_message": ""
+      }
+
+
+.. _in-work-update-application-ot:
+
+Update Application of OT
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. http:post::  /api/v1/works/overtime/update-application
+
+   :arg access_token: Xem :ref:`in-get-token`.
+   :arg checksum: :ref:`in-rule-checksum`.
+   :arg user_id: ID người dùng.
+   :arg client_id: ID client.
+   :arg overtime_id: ID của đơn yêu cầu tăng ca.
+   :arg start_time: Thời gian bắt đầu.
+   :arg end_time: Thời gian kết thúc.
+   :arg reason: Lý do tăng ca.
+   :arg hidden: Ẩn đi (0 hiện, 1 ẩn).
+
+   .. sourcecode:: js
+
+      {
+          "access_token": "_HASH_",
+          "checksum": "_HASH_",
+          "user_id": "18963",
+          "client_id": "18963",
+          "overtime_id": "19863",
+          "start_time": "2017-08-14 08:00",
+          "end_time": "2017-08-15 08:00",
+          "reason": "ItViec - Ít mà chất nên làm chậm deadline ;((",
+          "hidden": "0"
       }
 
 

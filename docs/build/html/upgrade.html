@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Upgrade table &mdash; STAR PEOPLE MBS 1.0.2 documentation</title>
+  <title>Upgrade table &mdash; STAR PEOPLE MBS 1.0.3 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="STAR PEOPLE MBS 1.0.2 documentation" href="index.html"/>
+    <link rel="top" title="STAR PEOPLE MBS 1.0.3 documentation" href="index.html"/>
         <link rel="prev" title="General Rules" href="rule.html"/> 
 
   
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                1.0.2
+                1.0.3
               </div>
             
           
@@ -102,6 +102,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="rule.html">General Rules</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Upgrade table</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#in-work-update-application-absence"><code class="docutils literal"><span class="pre">in-work-update-application-absence</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#in-work-update-application-ot"><code class="docutils literal"><span class="pre">in-work-update-application-ot</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#in-profile-reset-pw"><code class="docutils literal"><span class="pre">in-profile-reset-pw</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-work-absence-employee-table"><code class="docutils literal"><span class="pre">in-work-absence-employee-table</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-work-overtime-employee-table"><code class="docutils literal"><span class="pre">in-work-overtime-employee-table</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-profile-permission"><code class="docutils literal"><span class="pre">in-profile-permission</span></code></a></li>
@@ -111,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#in-work-absence-table"><code class="docutils literal"><span class="pre">in-work-absence-table</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-work-overtime-table"><code class="docutils literal"><span class="pre">in-work-overtime-table</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-profile-change-pw"><code class="docutils literal"><span class="pre">in-profile-change-pw</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#in-profile-reset-pw"><code class="docutils literal"><span class="pre">in-profile-reset-pw</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><code class="docutils literal"><span class="pre">in-profile-reset-pw</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -182,6 +185,80 @@
 <p>Phần này liệt kê những APIs nào đã được thay đổi hoặc thêm vào.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
+<p class="last">Các phần được cập nhật trong version latest (1.0.3) ngày 11/12/2017.</p>
+</div>
+<p>ss</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="5%" />
+<col width="45%" />
+<col width="49%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>STT</td>
+<td>APIs</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td><a class="reference internal" href="work.html#in-work-update-application-absence"><span class="std std-ref">Update Application of Absence</span></a></td>
+<td><code class="docutils literal"><span class="pre">new</span></code> Cap nhat don duoc YC chinh sua</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td><a class="reference internal" href="work.html#in-work-update-application-ot"><span class="std std-ref">Update Application of OT</span></a></td>
+<td><code class="docutils literal"><span class="pre">new</span></code> Cap nhat don duoc YC chinh sua</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td><a class="reference internal" href="work.html#in-work-absence-table"><span class="std std-ref">Absence table</span></a></td>
+<td><code class="docutils literal"><span class="pre">update</span></code> Them total time va hidden status</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td><a class="reference internal" href="work.html#in-work-absence-employee-table"><span class="std std-ref">Absence employee table</span></a></td>
+<td><code class="docutils literal"><span class="pre">update</span></code> Them total time va hidden status</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td><a class="reference internal" href="work.html#in-work-absence-detail"><span class="std std-ref">Absence detail</span></a></td>
+<td><code class="docutils literal"><span class="pre">update</span></code> Them total time va hidden status</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td><a class="reference internal" href="work.html#in-work-overtime-table"><span class="std std-ref">Overtime table</span></a></td>
+<td><code class="docutils literal"><span class="pre">update</span></code> Them total time va hidden status</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td><a class="reference internal" href="work.html#in-work-overtime-employee-table"><span class="std std-ref">Overtime employee table</span></a></td>
+<td><code class="docutils literal"><span class="pre">update</span></code> Them total time va hidden status</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td><a class="reference internal" href="work.html#in-work-overtime-detail"><span class="std std-ref">Overtime detail</span></a></td>
+<td><code class="docutils literal"><span class="pre">update</span></code> Them total time va hidden status</td>
+</tr>
+<tr class="row-even"><td>9</td>
+<td><a class="reference internal" href="profile.html#in-profile-reset-pw"><span class="std std-ref">Reset password</span></a></td>
+<td><code class="docutils literal"><span class="pre">update</span></code> Remove access_token</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="in-work-update-application-absence">
+<h2><a class="reference internal" href="work.html#in-work-update-application-absence"><span class="std std-ref">Update Application of Absence</span></a><a class="headerlink" href="#in-work-update-application-absence" title="Permalink to this headline">¶</a></h2>
+<p>API này mới được thêm vào để những đơn có trạng thái Yêu cầu chỉnh sửa có thể cập nhật được.</p>
+</div>
+<div class="section" id="in-work-update-application-ot">
+<h2><a class="reference internal" href="work.html#in-work-update-application-ot"><span class="std std-ref">Update Application of OT</span></a><a class="headerlink" href="#in-work-update-application-ot" title="Permalink to this headline">¶</a></h2>
+<p>API này mới được thêm vào để những đơn có trạng thái Yêu cầu chỉnh sửa có thể cập nhật được.</p>
+<p><code class="docutils literal"><span class="pre">#3</span> <span class="pre">-</span> <span class="pre">#5</span></code> là những APIs của phần Xin nghỉ phép có một vài thay đổi nhỏ sau:</p>
+<ul class="simple">
+<li>Thêm key <strong>total_time</strong> ở response để xác định số tổng ngày nghỉ phép.</li>
+<li>Trạng thái <strong>hidden</strong> thì không trả về trong response (trạng thái xóa trên web hoặc client cập nhật hidden = 1).</li>
+</ul>
+<p><code class="docutils literal"><span class="pre">#6</span> <span class="pre">-</span> <span class="pre">#8</span></code> là những APIs của phần Xin tăng ca có một thay đổi nhỏ sau:</p>
+<ul class="simple">
+<li>Trạng thái <strong>hidden</strong> thì không trả về trong response (trạng thái xóa trên web hoặc client cập nhật hidden = 1).</li>
+</ul>
+</div>
+<div class="section" id="in-profile-reset-pw">
+<h2><a class="reference internal" href="profile.html#in-profile-reset-pw"><span class="std std-ref">Reset password</span></a><a class="headerlink" href="#in-profile-reset-pw" title="Permalink to this headline">¶</a></h2>
+<p>API reset mật khẩu được thực hiện bên ngoài phạm vi đăng nhập nên không thể <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p class="last">Các phần được cập nhật trong version latest (1.0.2) ngày 30/11/2017.</p>
 </div>
 <table border="1" class="docutils">
@@ -205,6 +282,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <div class="section" id="in-work-absence-employee-table">
 <h2><a class="reference internal" href="work.html#in-work-absence-employee-table"><span class="std std-ref">Absence employee table</span></a><a class="headerlink" href="#in-work-absence-employee-table" title="Permalink to this headline">¶</a></h2>
 <p>API này mới được thêm vào để người quản lý lấy danh sách nhân viên xin nghỉ phép.</p>
@@ -346,8 +424,8 @@ Dữ liệu nhận về là một <code class="docutils literal"><span class="pr
 </pre></div>
 </div>
 </div>
-<div class="section" id="in-profile-reset-pw">
-<h2><a class="reference internal" href="profile.html#in-profile-reset-pw"><span class="std std-ref">Reset password</span></a><a class="headerlink" href="#in-profile-reset-pw" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2><a class="reference internal" href="profile.html#in-profile-reset-pw"><span class="std std-ref">Reset password</span></a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>API này mới được thêm vào cho phép người dùng không thể thay đổi mật khẩu mới (do quên, etc.).
 <strong>Mật khẩu reset</strong> sẽ được gửi qua email của chính user đó.
 Dữ liệu nhận về là một <code class="docutils literal"><span class="pre">object</span></code> có dạng:</p>
@@ -407,7 +485,7 @@ Dữ liệu nhận về là một <code class="docutils literal"><span class="pr
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0.2',
+            VERSION:'1.0.3',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Work Activities &mdash; STAR PEOPLE MBS 1.0.2 documentation</title>
+  <title>Work Activities &mdash; STAR PEOPLE MBS 1.0.3 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="STAR PEOPLE MBS 1.0.2 documentation" href="index.html"/>
+    <link rel="top" title="STAR PEOPLE MBS 1.0.3 documentation" href="index.html"/>
         <link rel="next" title="Salary Information" href="salary.html"/>
         <link rel="prev" title="Employee Profile" href="profile.html"/> 
 
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                1.0.2
+                1.0.3
               </div>
             
           
@@ -105,6 +105,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#absent-activity">Absent activity</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#apply-for-absence">Apply for absence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-application-of-absence">Update Application of Absence</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#absence-approval">Absence approval</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#absence-table">Absence table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#absence-employee-table">Absence employee table</a></li>
@@ -114,6 +115,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#overtime-activity">Overtime activity</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#apply-for-ot">Apply for OT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-application-of-ot">Update Application of OT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#overtime-approval">Overtime approval</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#overtime-table">Overtime table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#overtime-employee-table">Overtime employee table</a></li>
@@ -434,6 +436,67 @@
 </dd></dl>
 
 </div>
+<div class="section" id="update-application-of-absence">
+<span id="in-work-update-application-absence"></span><h3>Update Application of Absence<a class="headerlink" href="#update-application-of-absence" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1-works-absent-update-application">
+<code class="descname">POST </code><code class="descname">/api/v1/works/absent/update-application</code><a class="headerlink" href="#post--api-v1-works-absent-update-application" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
+<li><strong>user_id</strong> &#8211; ID người dùng.</li>
+<li><strong>client_id</strong> &#8211; ID client.</li>
+<li><strong>absence_id</strong> &#8211; ID của đơn xin phép.</li>
+<li><strong>start_time</strong> &#8211; Thời gian bắt đầu.</li>
+<li><strong>end_time</strong> &#8211; Thời gian kết thúc.</li>
+<li><strong>kind</strong> &#8211; Loại phép (Xem <a class="reference internal" href="rule.html#in-rule-kind-mapping"><span class="std std-ref">Kind definition</span></a>).</li>
+<li><strong>reason</strong> &#8211; Lý do nghỉ.</li>
+<li><strong>hidden</strong> &#8211; Ẩn đi (0 hiện, 1 ẩn).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;absence_id&quot;</span><span class="o">:</span> <span class="s2">&quot;19863&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-14 08:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-15 08:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kind&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Bệnh rất nặng :((&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hidden&quot;</span><span class="o">:</span> <span class="s2">&quot;0&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>string</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="absence-approval">
 <h3>Absence approval<a class="headerlink" href="#absence-approval" title="Permalink to this headline">¶</a></h3>
 <dl class="post">
@@ -543,6 +606,7 @@
        <span class="s2">&quot;phone&quot;</span><span class="o">:</span> <span class="s2">&quot;0961095661&quot;</span><span class="p">,</span>
        <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
        <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">1513651191000</span><span class="p">,</span> <span class="mi">1513651191000</span><span class="p">],</span>
+       <span class="s2">&quot;total_time&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
        <span class="s2">&quot;kind&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
        <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Bệnh&quot;</span><span class="p">,</span>
        <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="mi">0</span>
@@ -611,6 +675,7 @@
        <span class="s2">&quot;phone&quot;</span><span class="o">:</span> <span class="s2">&quot;0961095661&quot;</span><span class="p">,</span>
        <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
        <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">1513651191000</span><span class="p">,</span> <span class="mi">1513651191000</span><span class="p">],</span>
+       <span class="s2">&quot;total_time&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
        <span class="s2">&quot;kind&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
        <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Bệnh&quot;</span><span class="p">,</span>
        <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="mi">0</span>
@@ -674,6 +739,7 @@
        <span class="s2">&quot;phone&quot;</span><span class="o">:</span> <span class="s2">&quot;0961095661&quot;</span><span class="p">,</span>
        <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;leon.tran@mobistar.vn&quot;</span><span class="p">,</span>
        <span class="s2">&quot;absent_time&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">1513651191000</span><span class="p">,</span> <span class="mi">1513651191000</span><span class="p">],</span>
+       <span class="s2">&quot;total_time&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
        <span class="s2">&quot;kind&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
        <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;Bệnh&quot;</span><span class="p">,</span>
        <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="mi">0</span>
@@ -778,6 +844,65 @@
     <span class="s2">&quot;start_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-14 08:00&quot;</span><span class="p">,</span>
     <span class="s2">&quot;end_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-15 08:00&quot;</span><span class="p">,</span>
     <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;ItViec - Ít mà chất nên làm chậm deadline ;((&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>error_code</strong> (<em>integer</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-code"><span class="std std-ref">Error Code</span></a>.</li>
+<li><strong>error_message</strong> (<em>string</em>) &#8211; <a class="reference internal" href="rule.html#in-rule-error-message"><span class="std std-ref">Error Message</span></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;error_code&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;error_message&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="update-application-of-ot">
+<span id="in-work-update-application-ot"></span><h3>Update Application of OT<a class="headerlink" href="#update-application-of-ot" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v1-works-overtime-update-application">
+<code class="descname">POST </code><code class="descname">/api/v1/works/overtime/update-application</code><a class="headerlink" href="#post--api-v1-works-overtime-update-application" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>access_token</strong> &#8211; Xem <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</li>
+<li><strong>checksum</strong> &#8211; <a class="reference internal" href="rule.html#in-rule-checksum"><span class="std std-ref">Check Sum</span></a>.</li>
+<li><strong>user_id</strong> &#8211; ID người dùng.</li>
+<li><strong>client_id</strong> &#8211; ID client.</li>
+<li><strong>overtime_id</strong> &#8211; ID của đơn yêu cầu tăng ca.</li>
+<li><strong>start_time</strong> &#8211; Thời gian bắt đầu.</li>
+<li><strong>end_time</strong> &#8211; Thời gian kết thúc.</li>
+<li><strong>reason</strong> &#8211; Lý do tăng ca.</li>
+<li><strong>hidden</strong> &#8211; Ẩn đi (0 hiện, 1 ẩn).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="o">:</span> <span class="s2">&quot;_HASH_&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;user_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;18963&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;overtime_id&quot;</span><span class="o">:</span> <span class="s2">&quot;19863&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-14 08:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-08-15 08:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;ItViec - Ít mà chất nên làm chậm deadline ;((&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hidden&quot;</span><span class="o">:</span> <span class="s2">&quot;0&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1156,7 +1281,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0.2',
+            VERSION:'1.0.3',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

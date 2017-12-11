@@ -56,7 +56,7 @@ Approval status definition
 Là một biến kiểu ``integer`` xác định trạng thái của đơn xin nghỉ phép/tăng ca.
 
 * -1 - N/A.
-* 0 - Chờ duyệt duyệt.
+* 0 - Chờ duyệt.
 * 1 - Đã duyệt.
 * 2 - Không duyệt.
 * 3 - Yêu cầu chỉnh sửa.
@@ -207,6 +207,7 @@ Là một JSON ``object`` nhận được khi :ref:`in-work-absence-detail`. Bao
 * **phone** (*string*) - Điện thoại.
 * **email** (*string*) - Thư điện tử.
 * **absent_time** (*array*) - Thời gian nghỉ [1513651191000, 1513651191000].
+* **total_time** (*float*) - Tổng số ngày nghỉ.
 * **kind** (*integer*) - Loại phép (Xem :ref:`in-rule-kind-mapping`).
 * **reason** (*string*) - Lý do.
 * **status** (*integer*) - Trạng thái đơn (Xem :ref:`in-rule-approval-status-mapping`).
@@ -222,6 +223,7 @@ Là một JSON ``object`` nhận được khi :ref:`in-work-absence-detail`. Bao
           "phone": "0961095661",
           "email": "leon.tran@mobistar.vn",
           "absent_time": [1513651191000, 1513651191000],
+          "total_time": 1,
           "kind": 0,
           "reason": "Sick",
           "status": -1
@@ -242,6 +244,7 @@ Là một JSON ``object`` nhận được khi :ref:`in-work-overtime-detail`. Ba
 * **phone** (*string*) - Điện thoại.
 * **email** (*string*) - Thư điện tử.
 * **absent_time** (*array*) - Thời gian nghỉ [1513651191000, 1513651191000].
+* **total_time** (*float*) - Tổng số ngày nghỉ.
 * **reason** (*string*) - Lý do.
 * **status** (*integer*) - Trạng thái đơn (Xem :ref:`in-rule-approval-status-mapping`).
 
@@ -256,6 +259,7 @@ Là một JSON ``object`` nhận được khi :ref:`in-work-overtime-detail`. Ba
           "phone": "0961095661",
           "email": "leon.tran@mobistar.vn",
           "absent_time": [1513651191000, 1513651191000],
+          "total_time": 1,
           "reason": "Urgent",
           "status": -1
       }

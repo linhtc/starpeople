@@ -3,6 +3,57 @@ Upgrade table
 
 Phần này liệt kê những APIs nào đã được thay đổi hoặc thêm vào.
 
+
+
+
+.. note:: Các phần được cập nhật trong version latest (1.0.3) ngày 11/12/2017.
+ 
+ss
+
++-----+------------------------------------------+----------------------------------------------+
+| STT | APIs                                     | Description                                  |
++-----+------------------------------------------+----------------------------------------------+
+| 1   | :ref:`in-work-update-application-absence`| ``new`` Cap nhat don duoc YC chinh sua       |
++-----+------------------------------------------+----------------------------------------------+
+| 2   | :ref:`in-work-update-application-ot`     | ``new`` Cap nhat don duoc YC chinh sua       |
++-----+------------------------------------------+----------------------------------------------+
+| 3   | :ref:`in-work-absence-table`             | ``update`` Them total time va hidden status  |
++-----+------------------------------------------+----------------------------------------------+
+| 4   | :ref:`in-work-absence-employee-table`    | ``update`` Them total time va hidden status  |
++-----+------------------------------------------+----------------------------------------------+
+| 5   | :ref:`in-work-absence-detail`            | ``update`` Them total time va hidden status  |
++-----+------------------------------------------+----------------------------------------------+
+| 6   | :ref:`in-work-overtime-table`            | ``update`` Them total time va hidden status  |
++-----+------------------------------------------+----------------------------------------------+
+| 7   | :ref:`in-work-overtime-employee-table`   | ``update`` Them total time va hidden status  |
++-----+------------------------------------------+----------------------------------------------+
+| 8   | :ref:`in-work-overtime-detail`           | ``update`` Them total time va hidden status  |
++-----+------------------------------------------+----------------------------------------------+
+| 9   | :ref:`in-profile-reset-pw`               | ``update`` Remove access_token               |
++-----+------------------------------------------+----------------------------------------------+
+
+:ref:`in-work-update-application-absence`
+-----------------------------------------
+API này mới được thêm vào để những đơn có trạng thái Yêu cầu chỉnh sửa có thể cập nhật được.
+
+:ref:`in-work-update-application-ot`
+------------------------------------
+API này mới được thêm vào để những đơn có trạng thái Yêu cầu chỉnh sửa có thể cập nhật được.
+
+``#3 - #5`` là những APIs của phần Xin nghỉ phép có một vài thay đổi nhỏ sau:
+
+* Thêm key **total_time** ở response để xác định số tổng ngày nghỉ phép.
+* Trạng thái **hidden** thì không trả về trong response (trạng thái xóa trên web hoặc client cập nhật hidden = 1).
+
+``#6 - #8`` là những APIs của phần Xin tăng ca có một thay đổi nhỏ sau:
+
+* Trạng thái **hidden** thì không trả về trong response (trạng thái xóa trên web hoặc client cập nhật hidden = 1).
+
+:ref:`in-profile-reset-pw`
+--------------------------
+
+API reset mật khẩu được thực hiện bên ngoài phạm vi đăng nhập nên không thể :ref:`in-get-token`.
+
 .. note:: Các phần được cập nhật trong version latest (1.0.2) ngày 30/11/2017.
  
 +-----+------------------------------------------+----------------------------------------------+
