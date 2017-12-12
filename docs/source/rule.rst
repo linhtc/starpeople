@@ -244,7 +244,7 @@ Là một JSON ``object`` nhận được khi :ref:`in-work-overtime-detail`. Ba
 * **phone** (*string*) - Điện thoại.
 * **email** (*string*) - Thư điện tử.
 * **absent_time** (*array*) - Thời gian nghỉ [1513651191000, 1513651191000].
-* **total_time** (*float*) - Tổng số ngày nghỉ.
+* **total_time** (*float*) - Tổng số giờ tăng ca.
 * **reason** (*string*) - Lý do.
 * **status** (*integer*) - Trạng thái đơn (Xem :ref:`in-rule-approval-status-mapping`).
 

@@ -619,6 +619,7 @@ Overtime table
              "phone": "0961095661",
              "email": "leon.tran@mobistar.vn",
              "overtime_time": [1513651191000, 1513651191000],
+             "total_time": 1,
              "reason": "Urgent",
              "status": 0
           }]
@@ -671,6 +672,7 @@ Overtime employee table
              "phone": "0961095661",
              "email": "leon.tran@mobistar.vn",
              "overtime_time": [1513651191000, 1513651191000],
+             "total_time": 1,
              "reason": "Urgent",
              "status": 0
           }]
@@ -717,6 +719,7 @@ Overtime detail
              "phone": "0961095661",
              "email": "leon.tran@mobistar.vn",
              "absent_time": [1513651191000, 1513651191000],
+             "total_time": 1,
              "reason": "Urgent",
              "status": 0
           }
