@@ -67,6 +67,7 @@ Get Access Token Key
    :>json integer error_code: :ref:`in-rule-error-code`.
    :>json string error_message: :ref:`in-rule-error-message`.
    :>json object data: :ref:`in-rule-data-access-token`.
+   :>json integer current_time: Ngày và Giờ hiện tại của Server.
 
    .. sourcecode:: js
 
@@ -77,7 +78,8 @@ Get Access Token Key
           {
              "user_id": "18963",
              "access_token": "_HASH_",
-             "expiration": 1513651191000
+             "expiration": 1513651191000,
+             "current_time": 1513651191000
           }
       }
 

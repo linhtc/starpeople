@@ -105,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#in-work-update-application-absence"><code class="docutils literal"><span class="pre">in-work-update-application-absence</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-work-update-application-ot"><code class="docutils literal"><span class="pre">in-work-update-application-ot</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-profile-reset-pw"><code class="docutils literal"><span class="pre">in-profile-reset-pw</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#in-get-token"><code class="docutils literal"><span class="pre">in-get-token</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-work-absence-employee-table"><code class="docutils literal"><span class="pre">in-work-absence-employee-table</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-work-overtime-employee-table"><code class="docutils literal"><span class="pre">in-work-overtime-employee-table</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-profile-permission"><code class="docutils literal"><span class="pre">in-profile-permission</span></code></a></li>
@@ -234,6 +235,10 @@
 <td><a class="reference internal" href="profile.html#in-profile-reset-pw"><span class="std std-ref">Reset password</span></a></td>
 <td><code class="docutils literal"><span class="pre">update</span></code> Remove access_token</td>
 </tr>
+<tr class="row-odd"><td>10</td>
+<td><a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a></td>
+<td><code class="docutils literal"><span class="pre">update</span></code> Them current time vao response</td>
+</tr>
 </tbody>
 </table>
 <div class="section" id="in-work-update-application-absence">
@@ -256,6 +261,13 @@
 <div class="section" id="in-profile-reset-pw">
 <h2><a class="reference internal" href="profile.html#in-profile-reset-pw"><span class="std std-ref">Reset password</span></a><a class="headerlink" href="#in-profile-reset-pw" title="Permalink to this headline">¶</a></h2>
 <p>API reset mật khẩu được thực hiện bên ngoài phạm vi đăng nhập nên không thể <a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a>.</p>
+</div>
+<div class="section" id="in-get-token">
+<h2><a class="reference internal" href="oauth.html#in-get-token"><span class="std std-ref">Get Access Token Key</span></a><a class="headerlink" href="#in-get-token" title="Permalink to this headline">¶</a></h2>
+<p>API này đã có trước đó và được cập nhật lại các phần sau:</p>
+<ul class="simple">
+<li><strong>current_time</strong> (<em>integer</em>) - Thêm current_time key trong Response.</li>
+</ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Các phần được cập nhật trong version latest (1.0.2) ngày 30/11/2017.</p>

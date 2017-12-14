@@ -26,13 +26,17 @@ Phần này liệt kê những APIs nào đã được thay đổi hoặc thêm 
 +-----+------------------------------------------+----------------------------------------------+
 | 9   | :ref:`in-profile-reset-pw`               | ``update`` Remove access_token               |
 +-----+------------------------------------------+----------------------------------------------+
+| 10  | :ref:`in-get-token`                      | ``update`` Them current time vao response    |
++-----+------------------------------------------+----------------------------------------------+
 
 :ref:`in-work-update-application-absence`
 -----------------------------------------
+
 API này mới được thêm vào để những đơn có trạng thái Yêu cầu chỉnh sửa có thể cập nhật được.
 
 :ref:`in-work-update-application-ot`
 ------------------------------------
+
 API này mới được thêm vào để những đơn có trạng thái Yêu cầu chỉnh sửa có thể cập nhật được.
 
 ``#3 - #5`` là những APIs của phần Xin nghỉ phép có một vài thay đổi nhỏ sau:
@@ -49,6 +53,14 @@ API này mới được thêm vào để những đơn có trạng thái Yêu c�
 
 API reset mật khẩu được thực hiện bên ngoài phạm vi đăng nhập nên không thể :ref:`in-get-token`.
 
+:ref:`in-get-token`
+--------------------------
+
+API này đã có trước đó và được cập nhật lại các phần sau:
+
+* **current_time** (*integer*) - Thêm current_time key trong Response.
+
+
 .. note:: Các phần được cập nhật trong version latest (1.0.2) ngày 30/11/2017.
  
 +-----+------------------------------------------+----------------------------------------------+
@@ -61,10 +73,12 @@ API reset mật khẩu được thực hiện bên ngoài phạm vi đăng nhậ
 
 :ref:`in-work-absence-employee-table`
 -------------------------------------
+
 API này mới được thêm vào để người quản lý lấy danh sách nhân viên xin nghỉ phép.
 
 :ref:`in-work-overtime-employee-table`
 --------------------------------------
+
 API này mới được thêm vào để người quản lý lấy danh sách nhân viên xin tăng ca.
 
 
@@ -92,6 +106,7 @@ API này mới được thêm vào để người quản lý lấy danh sách nh
 
 :ref:`in-profile-permission`
 ----------------------------
+
 API này mới được thêm vào nhằm lấy quyền truy cập vào các tính năng của ứng dụng.
 Dữ liệu nhận về là một ``object`` có dạng:
 
@@ -106,6 +121,7 @@ Dữ liệu nhận về là một ``object`` có dạng:
 
 :ref:`in-profile-shift`
 -----------------------
+
 API này mới được thêm vào nhằm lấy danh sách ca làm việc của một nhân viên.
 Dữ liệu nhận về là một ``object`` có dạng:
 
@@ -125,6 +141,7 @@ Dữ liệu nhận về là một ``object`` có dạng:
 
 :ref:`in-profile-get`
 -----------------------------
+
 API này đã có trước đó và được cập nhật lại các phần sau:
 
 * **address** (*string*) - Thêm address key trong Response.
@@ -132,6 +149,7 @@ API này đã có trước đó và được cập nhật lại các phần sau:
 
 :ref:`in-work-timekeeping-history`
 ----------------------------------
+
 API này mới được thêm vào nhằm lấy lịch sử chấm công của nhân viên.
 Dữ liệu nhận về là một ``array object`` có dạng:
 
@@ -153,6 +171,7 @@ Dữ liệu nhận về là một ``array object`` có dạng:
 
 :ref:`in-work-absence-table`
 ----------------------------
+
 API này đã có trước đó và được cập nhật lại các phần sau:
 
 * **from_date** (*date*) - Từ ngày.
@@ -160,6 +179,7 @@ API này đã có trước đó và được cập nhật lại các phần sau:
 
 :ref:`in-work-overtime-table`
 -----------------------------
+
 API này đã có trước đó và được cập nhật lại các phần sau:
 
 * **user_id** (*string*) - Thêm ID định danh người dùng trong Request.
@@ -170,6 +190,7 @@ API này đã có trước đó và được cập nhật lại các phần sau:
 
 :ref:`in-profile-change-pw`
 ---------------------------
+
 API này mới được thêm vào cho phép người dùng tự thay đổi mật khẩu đăng nhập.
 Dữ liệu nhận về là một ``object`` có dạng:
 
@@ -182,6 +203,7 @@ Dữ liệu nhận về là một ``object`` có dạng:
 
 :ref:`in-profile-reset-pw`
 --------------------------
+
 API này mới được thêm vào cho phép người dùng không thể thay đổi mật khẩu mới (do quên, etc.).
 **Mật khẩu reset** sẽ được gửi qua email của chính user đó.
 Dữ liệu nhận về là một ``object`` có dạng:

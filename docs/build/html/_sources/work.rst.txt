@@ -209,7 +209,7 @@ Update Application of Absence
           "end_time": "2017-08-15 08:00",
           "kind": 0,
           "reason": "Bệnh rất nặng :((",
-          "hidden": "0"
+          "hidden": 0
       }
 
 
@@ -526,7 +526,7 @@ Update Application of OT
           "start_time": "2017-08-14 08:00",
           "end_time": "2017-08-15 08:00",
           "reason": "ItViec - Ít mà chất nên làm chậm deadline ;((",
-          "hidden": "0"
+          "hidden": 0
       }
 
 

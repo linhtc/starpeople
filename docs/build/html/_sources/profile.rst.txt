@@ -138,18 +138,18 @@ Reset password
 --------------
 .. http:post::  /api/v1/profile/reset-password
 
-   :arg access_token: Xem :ref:`in-get-token`.
+   :arg imei: IMEI của thiết bị (Đã mã hóa với :ref:`in-rule-secret-key`).
+   :arg mac: Địa chỉ MAC của thiết bị (Đã mã hóa với :ref:`in-rule-secret-key`).
+   :arg username: Tên người dùng (Đã mã hóa với :ref:`in-rule-secret-key`).
    :arg checksum: :ref:`in-rule-checksum`.
-   :arg user_id: ID người dùng.
-   :arg client_id: ID client.
 
    .. sourcecode:: js
 
       {
-          "access_token": "_HASH_",
-          "checksum": "_HASH_",
-          "user_id": "18963",
-          "client_id": "18963"
+          "imei": "356938035643809",
+          "mac": "00:0a:95:9d:68:16",
+          "username": "leon.tran@mobistar.vn",
+          "checksum": "_HASH_"
       }
 
 
