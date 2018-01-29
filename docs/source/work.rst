@@ -24,7 +24,7 @@ Check-In
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
    :arg location: [lat,long] Kinh độ, vĩ độ thực hiện chấm công vào.
-   :arg photo: Ảnh chụp tại địa điểm thực hiện chấm công.
+   :arg photo: Ảnh chụp tại điểm chấm công (có gắn kèm ngày giờ).
 
    .. sourcecode:: js
 
@@ -63,7 +63,7 @@ Check-Out
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
    :arg location: [lat,long] Kinh độ, vĩ độ thực hiện chấm công ra.
-   :arg photo: Ảnh chụp tại địa điểm thực hiện chấm công.
+   :arg photo: Ảnh chụp tại điểm chấm công (có gắn kèm ngày giờ).
 
    .. sourcecode:: js
 
