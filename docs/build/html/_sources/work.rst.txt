@@ -12,6 +12,7 @@ Tài liệu này mô tả các phần liên quan đến Quản lý công việc.
 Timekeeping activity
 --------------------
 
+.. _in-work-timekeeping-check-in:
 
 Check-In
 ~~~~~~~~
@@ -23,6 +24,7 @@ Check-In
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
    :arg location: [lat,long] Kinh độ, vĩ độ thực hiện chấm công vào.
+   :arg photo: Ảnh chụp tại địa điểm thực hiện chấm công.
 
    .. sourcecode:: js
 
@@ -31,7 +33,8 @@ Check-In
           "checksum": "_HASH_",
           "user_id": "18963",
           "client_id": "18963",
-          "location": [10.785092,106.6913373]
+          "location": [10.785092,106.6913373],
+          "photo": "iVBORw0KGgoAAAANSUhEU..."
       }
 
 
@@ -48,6 +51,8 @@ Check-In
       }
 
 
+.. _in-work-timekeeping-check-out:
+
 Check-Out
 ~~~~~~~~~
 
@@ -58,6 +63,7 @@ Check-Out
    :arg user_id: ID người dùng.
    :arg client_id: ID client.
    :arg location: [lat,long] Kinh độ, vĩ độ thực hiện chấm công ra.
+   :arg photo: Ảnh chụp tại địa điểm thực hiện chấm công.
 
    .. sourcecode:: js
 
@@ -66,7 +72,8 @@ Check-Out
           "checksum": "_HASH_",
           "user_id": "18963",
           "client_id": "18963",
-          "location": [10.785092,106.6913373]
+          "location": [10.785092,106.6913373],
+          "photo": "iVBORw0KGgoAAAANSUhEU..."
       }
 
 
@@ -765,5 +772,3 @@ Overtime management
           "total_unapproved": 10,
           "total_update": 10
       }
-
-   
