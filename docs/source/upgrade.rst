@@ -18,7 +18,7 @@ Hai APIs trên mới được cập nhật lại nhằm tăng dữ liệu để 
 
 -> Trên **website cần thêm tính năng hiển thị ảnh chụp** để người Quản lý có thể vào kiểm tra.
 
-.. note:: Các phần được cập nhật trong version latest (1.0.3) ngày 14/12/2017.
+.. note:: Các phần được cập nhật trong version 1.0.3 ngày 14/12/2017.
 
 +-----+------------------------------------------+----------------------------------------------+
 | STT | APIs                                     | Description                                  |
@@ -76,7 +76,7 @@ API này đã có trước đó và được cập nhật lại các phần sau:
 * **current_time** (*integer*) - Thêm current_time key trong Response.
 
 
-.. note:: Các phần được cập nhật trong version latest (1.0.2) ngày 30/11/2017.
+.. note:: Các phần được cập nhật trong version 1.0.2 ngày 30/11/2017.
  
 +-----+------------------------------------------+----------------------------------------------+
 | STT | APIs                                     | Description                                  |
@@ -97,7 +97,7 @@ API này mới được thêm vào để người quản lý lấy danh sách nh
 API này mới được thêm vào để người quản lý lấy danh sách nhân viên xin tăng ca.
 
 
-.. note:: Các phần được cập nhật trong version latest (1.0.2) ngày 17/11/2017.
+.. note:: Các phần được cập nhật trong version latest 1.0.2 ngày 17/11/2017.
  
 +-----+------------------------------------------+----------------------------------------------+
 | STT | APIs                                     | Description                                  |
