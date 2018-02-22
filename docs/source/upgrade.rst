@@ -16,7 +16,7 @@ Phần này liệt kê những APIs nào đã được thay đổi hoặc thêm 
 Hai APIs trên mới được cập nhật lại nhằm tăng dữ liệu để kiểm tra, 
 đối chiếu cho việc chấm công (Thêm phần ảnh chụp nhân viên)
 
--> Trên website cần thêm tính năng hiển thị ảnh chụp để người Quản lý có thể vào kiểm tra.
+-> Trên **website cần thêm tính năng hiển thị ảnh chụp** để người Quản lý có thể vào kiểm tra.
 
 .. note:: Các phần được cập nhật trong version latest (1.0.3) ngày 14/12/2017.
 
