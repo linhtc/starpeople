@@ -12,13 +12,17 @@ Phần này liệt kê những APIs nào đã được thay đổi hoặc thêm 
 +-----+------------------------------------------+----------------------------------------------+
 | 2   | :ref:`in-work-timekeeping-check-out`     | ``update`` Them anh chup nhan vien           |
 +-----+------------------------------------------+----------------------------------------------+
+| 3   | :ref:`in-work-absence-management`        | ``update`` Them thoi gian lay du lieu        |
++-----+------------------------------------------+----------------------------------------------+
+| 4   | :ref:`in-work-overtime-management`       | ``update`` Them thoi gian lay du lieu        |
++-----+------------------------------------------+----------------------------------------------+
 
-Hai APIs trên mới được cập nhật lại nhằm tăng dữ liệu để kiểm tra, 
+Hai APIs Check-in-out mới được cập nhật lại nhằm có thêm dữ liệu để kiểm tra, 
 đối chiếu cho việc chấm công (Thêm phần ảnh chụp nhân viên)
 
 -> Trên **website cần thêm tính năng hiển thị ảnh chụp** để người Quản lý có thể vào kiểm tra.
 
-.. note:: Các phần được cập nhật trong version latest (1.0.3) ngày 14/12/2017.
+.. note:: Các phần được cập nhật trong version 1.0.3 ngày 14/12/2017.
 
 +-----+------------------------------------------+----------------------------------------------+
 | STT | APIs                                     | Description                                  |
@@ -76,7 +80,7 @@ API này đã có trước đó và được cập nhật lại các phần sau:
 * **current_time** (*integer*) - Thêm current_time key trong Response.
 
 
-.. note:: Các phần được cập nhật trong version latest (1.0.2) ngày 30/11/2017.
+.. note:: Các phần được cập nhật trong version 1.0.2 ngày 30/11/2017.
  
 +-----+------------------------------------------+----------------------------------------------+
 | STT | APIs                                     | Description                                  |
@@ -97,7 +101,7 @@ API này mới được thêm vào để người quản lý lấy danh sách nh
 API này mới được thêm vào để người quản lý lấy danh sách nhân viên xin tăng ca.
 
 
-.. note:: Các phần được cập nhật trong version latest (1.0.2) ngày 17/11/2017.
+.. note:: Các phần được cập nhật trong version latest 1.0.2 ngày 17/11/2017.
  
 +-----+------------------------------------------+----------------------------------------------+
 | STT | APIs                                     | Description                                  |
